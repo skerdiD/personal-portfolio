@@ -1,7 +1,7 @@
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Capabilities", link: "#testimonials" },
+  { name: "Principles", link: "#principles" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -50,7 +50,7 @@ export const gridItems = [
   {
     id: 5,
     title: "Currently building AI-powered SaaS and business tooling",
-    description: "The Inside Scoop",
+    description: "Current focus",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -133,98 +133,80 @@ export const projects = [
   },
 ];
 
-export const testimonials = [
+export const productValues = [
   {
     quote:
-      "I focus on building products that feel polished on the surface and dependable underneath, from clean interfaces to the business rules that make them useful.",
-    name: "Full-stack SaaS Builds",
-    title: "Product architecture, UI, auth, and data flows",
+      "I build AI features around real workflows: triage, proposals, automation, analysis, and structured output that helps people move faster.",
+    name: "Practical AI Integrations",
+    title: "Useful automation inside SaaS products",
   },
   {
     quote:
-      "I design dashboards for scanning, filtering, and decision-making, with attention to empty states, loading states, and the small details that make tools usable every day.",
-    name: "Dashboards & Admin Tools",
-    title: "Operational interfaces for real workflows",
+      "I care about dashboards that are easy to scan, filter, and act on, with clear states for data, loading, errors, and empty workflows.",
+    name: "Dashboard UX",
+    title: "Clean interfaces for business decisions",
   },
   {
     quote:
-      "I integrate AI where it supports the product instead of distracting from it: smart actions, structured generation, workflow helpers, and useful automation.",
-    name: "AI Integrations",
-    title: "Practical AI features inside web products",
+      "I treat auth, databases, APIs, and permissions as product design problems, not just implementation details.",
+    name: "Full-stack Foundations",
+    title: "Auth, data models, APIs, and access control",
   },
   {
     quote:
-      "I care about the full product path: frontend, backend, database, API design, authentication, deployment concerns, and maintainable code.",
-    name: "Production-style Delivery",
-    title: "End-to-end implementation mindset",
+      "I build realtime interfaces with the small UX details that make them feel alive: typing states, message flow, reactions, and responsive feedback.",
+    name: "Realtime Product Feel",
+    title: "Collaboration and activity-driven interfaces",
   },
   {
     quote:
-      "I translate product ideas into clear interfaces and working systems, keeping the experience focused, responsive, and ready to grow.",
-    name: "Business Tools",
-    title: "Custom apps for teams, services, and operations",
+      "I look for the production polish that separates a demo from a product: testing paths, deployment readiness, performance, and resilient UI states.",
+    name: "Shipping Quality",
+    title: "Testing, deployment, performance, and polish",
   },
 ];
 
-export const companies = [
-  {
-    id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
-  },
-  {
-    id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
-  },
-  {
-    id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
-  },
-  {
-    id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
-  },
-  {
-    id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
-  },
+export const stackHighlights = [
+  "Next.js",
+  "TypeScript",
+  "Supabase",
+  "PostgreSQL",
+  "Clerk",
+  "Prisma",
+  "AI SDK",
+  "Gemini",
+  "Recharts",
+  "Tailwind",
+  "Sentry",
+  "Testing",
 ];
 
-export const workExperience = [
+export const productStrengths = [
   {
     id: 1,
-    title: "Full-stack Web Developer",
-    desc: "Building modern web apps with responsive interfaces, API-driven features, and reliable product flows.",
+    title: "SaaS Product Architecture",
+    desc: "Planning product flows, data models, auth boundaries, and feature structure before polishing the interface.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "AI SaaS Builder",
-    desc: "Creating SaaS-style products with AI features, authentication patterns, dashboards, and database-backed workflows.",
+    title: "AI-powered Workflows",
+    desc: "Turning messy inputs into structured actions, tickets, proposals, summaries, and business-ready outputs.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Dashboard & Business Tools",
-    desc: "Designing admin panels and operational tools that make data, users, and actions easier to manage.",
+    title: "Dashboards & Business Tools",
+    desc: "Designing interfaces for tracking, filtering, reviewing, and acting on operational or financial data.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Frontend Experience Engineer",
-    desc: "Crafting clean, animated, accessible interfaces with Next.js, TypeScript, and production-minded UI patterns.",
+    title: "Production Polish",
+    desc: "Improving responsive behavior, testing paths, error states, performance, deployment readiness, and UX details.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
@@ -233,14 +215,8 @@ export const workExperience = [
 export const socialMedia = [
   {
     id: 1,
+    name: "GitHub",
     img: "/git.svg",
-  },
-  {
-    id: 2,
-    img: "/twit.svg",
-  },
-  {
-    id: 3,
-    img: "/link.svg",
+    link: "https://github.com/skerdiD",
   },
 ];
