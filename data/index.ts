@@ -8,8 +8,9 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "I build full-stack products with clean UI and real business logic",
-    description: "",
+    title:
+      "I am Skerdi, a computer science student and full-stack developer focused on real-world web apps with clean UI, strong product thinking, AI integrations, dashboards, auth, databases, and production-style workflows.",
+    description: "About Me",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
@@ -232,7 +233,19 @@ export const socialMedia = [
   {
     id: 1,
     name: "GitHub",
-    img: "/git.svg",
     link: "https://github.com/skerdiD",
+  },
+  {
+    id: 2,
+    name: "LinkedIn",
+  },
+  {
+    id: 3,
+    name: "X/Twitter",
+  },
+  {
+    id: 4,
+    name: "Email",
+    link: "mailto:hello@skerdi.dev",
   },
 ];
