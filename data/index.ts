@@ -161,7 +161,7 @@ export const productValues = [
   },
   {
     quote:
-      "I look for the production polish that separates a demo from a product: testing paths, deployment readiness, performance, and resilient UI states.",
+      "I look for the production polish that turns an early build into a reliable product: testing paths, deployment readiness, performance, and resilient UI states.",
     name: "Shipping Quality",
     title: "Testing, deployment, performance, and polish",
   },
@@ -210,14 +210,14 @@ export const productStrengths = [
     id: 2,
     title: "AI-powered Workflows",
     desc: "Turning messy inputs into structured actions, tickets, proposals, summaries, and business-ready outputs.",
-    className: "md:col-span-2", // change to md:col-span-2
+    className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
     title: "Dashboards & Business Tools",
     desc: "Designing interfaces for tracking, filtering, reviewing, and acting on operational or financial data.",
-    className: "md:col-span-2", // change to md:col-span-2
+    className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {

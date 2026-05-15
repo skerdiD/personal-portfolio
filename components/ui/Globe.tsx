@@ -135,7 +135,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       });
     }
 
-    // remove duplicates for same lat and lng
+    // Deduplicate points that share the same coordinates.
     const filteredPoints = points.filter(
       (v, i, a) =>
         a.findIndex((v2) =>

@@ -15,7 +15,6 @@ const socialIcons = {
 const Footer = () => {
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
-      {/* background grid */}
       <div className="w-full absolute left-0 -bottom-72 min-h-96">
         <img
           src="/footer-grid.svg"
@@ -59,8 +58,8 @@ const Footer = () => {
                 <button
                   key={info.id}
                   type="button"
-                  aria-label={`${info.name} link placeholder`}
-                  title={`${info.name} link placeholder`}
+                  aria-label={`${info.name} link coming soon`}
+                  title={`${info.name} link coming soon`}
                   className={`${classes} cursor-not-allowed opacity-45`}
                   disabled
                 >
