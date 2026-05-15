@@ -1,5 +1,3 @@
-"use client";
-
 import { productValues, stackHighlights } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";
 

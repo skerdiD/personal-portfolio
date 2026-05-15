@@ -1,6 +1,7 @@
 import { FaLocationArrow } from "react-icons/fa6";
 import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { IoMailOutline } from "react-icons/io5";
+import Image from "next/image";
 
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
@@ -24,21 +25,22 @@ const Footer = () => {
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
       <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
+        <Image
           src="/footer-grid.svg"
           alt="grid"
+          fill
+          sizes="100vw"
           className="w-full h-full opacity-50 "
         />
       </div>
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Ready to build an <span className="text-purple">AI-powered</span>{" "}
-          product or business tool?
+          Ready to build a <span className="text-purple">SaaS app</span>,
+          dashboard, or AI feature?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out and let&apos;s turn your idea into a clean, functional web
-          app with the right workflows behind it.
+          Reach out to turn a clear product idea into a focused, usable web app.
         </p>
         <p className="text-white-200/80 mb-6 max-w-2xl text-center text-sm">
           Available for freelance and collaboration work on full-stack apps,

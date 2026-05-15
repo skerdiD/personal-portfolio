@@ -1,21 +1,26 @@
+"use client";
+
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
-import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
+const CanvasRevealEffect = dynamic(
+  () => import("./ui/CanvasRevealEffect").then((mod) => mod.CanvasRevealEffect),
+  { ssr: false }
+);
 
 const Approach = () => {
   return (
     <section className="w-full py-20">
       <h1 className="heading">
-        My <span className="text-purple">approach</span>
+        How I <span className="text-purple">work</span>
       </h1>
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         <Card
-          title="Planning & Strategy"
+          title="Plan the Product"
           icon={<AceternityIcon order="Phase 1" />}
-          des="I start by mapping the product goal, user flows, data model,
-          AI touchpoints, and the business logic that needs to work behind the
-          interface."
+          des="I map the goal, user flow, data model, AI touchpoints, and core
+          business logic before building."
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -23,11 +28,10 @@ const Approach = () => {
           />
         </Card>
         <Card
-          title="Development & Progress Update"
+          title="Build the Workflow"
           icon={<AceternityIcon order="Phase 2" />}
-          des="I build the frontend and backend in focused passes, keeping the
-          UI, APIs, auth, database, and AI integrations aligned as the product
-          takes shape."
+          des="I build the UI, APIs, auth, database, and AI pieces in focused
+          passes so the product stays usable as it grows."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -40,11 +44,10 @@ const Approach = () => {
           />
         </Card>
         <Card
-          title="Polish & Launch"
+          title="Polish for Launch"
           icon={<AceternityIcon order="Phase 3" />}
-          des="I refine the details that make the app feel production-ready:
-          responsive states, error handling, performance, deployment checks,
-          and a clean handoff."
+          des="I tighten responsive states, errors, performance, deployment
+          checks, and handoff details before release."
         >
           <CanvasRevealEffect
             animationSpeed={3}

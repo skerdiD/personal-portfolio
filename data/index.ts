@@ -9,7 +9,7 @@ export const gridItems = [
   {
     id: 1,
     title:
-      "I am Skerdi, a computer science student and full-stack developer focused on real-world web apps with clean UI, strong product thinking, AI integrations, dashboards, auth, databases, and production-style workflows.",
+      "I build full-stack SaaS apps, dashboards, and AI features with clean UI, reliable backend logic, auth, databases, and deployment-ready workflows.",
     description: "About Me",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -19,7 +19,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "I collaborate smoothly across async teams and product workflows",
+    title: "Clear planning, practical communication, and steady delivery",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -30,7 +30,7 @@ export const gridItems = [
   {
     id: 3,
     title: "Full-stack & AI stack",
-    description: "Built for real SaaS apps",
+    description: "Built for SaaS workflows",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -39,7 +39,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "AI integrations, protected dashboards, databases, testing, and deployment polish.",
+    title: "AI features, protected dashboards, database design, testing, and deployment polish.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -50,7 +50,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building AI-powered SaaS and business tooling",
+    title: "Building SaaS tools that turn workflows into usable products",
     description: "Current focus",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -60,7 +60,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Have an AI product or dashboard in mind?",
+    title: "Need a dashboard, SaaS app, or AI feature?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -74,10 +74,10 @@ export const projects = [
   {
     id: 1,
     title: "BugTriage AI",
-    focus: "AI issue intake and engineering handoff",
-    des: "Turns unstructured bug reports, screenshots, logs, and user complaints into clear, developer-ready tickets so teams can move from vague feedback to actionable work faster.",
+    focus: "AI issue intake",
+    des: "Turns bug reports, screenshots, logs, and user complaints into clear, developer-ready tickets.",
     useCase:
-      "Useful for SaaS teams, support-heavy products, and agencies that need a cleaner path from customer reports to engineering tasks.",
+      "For SaaS teams that need a cleaner support-to-engineering handoff.",
     features: [
       "Structured AI triage from messy inputs",
       "Auth, database modeling, monitoring, and abuse protection",
@@ -98,13 +98,13 @@ export const projects = [
   {
     id: 2,
     title: "Pulse Chat",
-    focus: "Realtime collaboration product",
-    des: "A team chat workspace built around fast room-based communication, live messaging, reactions, typing states, and permission-aware interactions.",
+    focus: "Realtime team workspace",
+    des: "A team chat app with rooms, live messaging, reactions, typing states, and permission-aware interactions.",
     useCase:
-      "Useful for internal teams, communities, and client portals that need lightweight collaboration without a bloated enterprise tool.",
+      "For teams, communities, and client portals that need focused collaboration.",
     features: [
-      "Realtime rooms, presence-style feedback, and reactions",
-      "Permission-aware UX with tested interaction flows",
+      "Realtime rooms, feedback states, and reactions",
+      "Permission-aware UX with tested flows",
     ],
     img: "/p2.svg",
     tags: [
@@ -120,10 +120,10 @@ export const projects = [
   {
     id: 3,
     title: "Portfolia",
-    focus: "Financial dashboard and data visualization",
-    des: "A portfolio analytics dashboard for organizing holdings, watchlists, allocation, gains and losses, and performance signals in a clean decision-support interface.",
+    focus: "Portfolio dashboard",
+    des: "A finance dashboard for holdings, watchlists, allocation, gains and losses, and performance signals.",
     useCase:
-      "Useful for investors, finance learners, and small advisory workflows that need readable portfolio visibility instead of spreadsheet sprawl.",
+      "For users who need readable portfolio visibility without spreadsheet sprawl.",
     features: [
       "Chart-driven portfolio views and watchlists",
       "Protected dashboard patterns with relational data",
@@ -135,13 +135,13 @@ export const projects = [
   {
     id: 4,
     title: "ScopeFlow AI",
-    focus: "AI proposal and scope generation",
-    des: "Converts rough discovery notes into organized proposals, deliverables, milestones, risks, and scope language that can be reviewed and refined for clients.",
+    focus: "AI proposal workflow",
+    des: "Turns discovery notes into organized proposals, deliverables, milestones, risks, and scope language.",
     useCase:
-      "Useful for freelancers, consultants, and agencies that want to move from sales calls to professional proposals with less manual rewriting.",
+      "For freelancers, consultants, and agencies moving from sales calls to client-ready scope.",
     features: [
       "AI-assisted scoping from raw notes",
-      "Client-ready structure for deliverables, risks, and milestones",
+      "Client-ready deliverables, risks, and milestones",
     ],
     img: "/p4.svg",
     tags: ["React", "TypeScript", "AI", "Supabase", "Tailwind", "SaaS"],
@@ -150,13 +150,13 @@ export const projects = [
   {
     id: 5,
     title: "LeadFlow",
-    focus: "CRM workflow for small service teams",
-    des: "A lead management SaaS for tracking prospects, pipeline stages, follow-ups, and opportunities so small teams can manage sales without losing context.",
+    focus: "Lead management SaaS",
+    des: "A CRM-style workflow for tracking prospects, pipeline stages, follow-ups, and opportunities.",
     useCase:
-      "Useful for freelancers, studios, and local service businesses that need a focused pipeline from first contact to close.",
+      "For freelancers, studios, and service businesses that need a simple path from lead to close.",
     features: [
-      "Pipeline tracking, lead status, and follow-up workflows",
-      "Authenticated SaaS structure with persistent business data",
+      "Pipeline tracking, lead status, and follow-ups",
+      "Authenticated SaaS structure with persistent data",
     ],
     img: "/p1.svg",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "Clerk", "Tailwind", "SaaS"],
@@ -167,31 +167,31 @@ export const projects = [
 export const productValues = [
   {
     quote:
-      "I build AI features around real workflows: triage, proposals, automation, analysis, and structured output that helps people move faster.",
+      "I build AI features around useful workflows: triage, proposals, automation, analysis, and structured output.",
     name: "Practical AI Integrations",
-    title: "Useful automation inside SaaS products",
+    title: "Automation that supports real product tasks",
   },
   {
     quote:
-      "I care about dashboards that are easy to scan, filter, and act on, with clear states for data, loading, errors, and empty workflows.",
+      "I design dashboards that are easy to scan, filter, and act on, with clear loading, error, and empty states.",
     name: "Dashboard UX",
-    title: "Clean interfaces for business decisions",
+    title: "Clear interfaces for business decisions",
   },
   {
     quote:
-      "I treat auth, databases, APIs, and permissions as product design problems, not just implementation details.",
+      "I treat auth, databases, APIs, and permissions as core parts of the product experience.",
     name: "Full-stack Foundations",
     title: "Auth, data models, APIs, and access control",
   },
   {
     quote:
-      "I build realtime interfaces with the small UX details that make them feel alive: typing states, message flow, reactions, and responsive feedback.",
+      "I add realtime details where they help: message flow, reactions, typing states, and responsive feedback.",
     name: "Realtime Product Feel",
     title: "Collaboration and activity-driven interfaces",
   },
   {
     quote:
-      "I look for the production polish that turns an early build into a reliable product: testing paths, deployment readiness, performance, and resilient UI states.",
+      "I focus on the polish that makes a product easier to trust: testing paths, deployment readiness, performance, and resilient UI states.",
     name: "Shipping Quality",
     title: "Testing, deployment, performance, and polish",
   },
@@ -232,28 +232,28 @@ export const productStrengths = [
   {
     id: 1,
     title: "SaaS Product Architecture",
-    desc: "Planning product flows, data models, auth boundaries, and feature structure before polishing the interface.",
+    desc: "Product flows, data models, auth boundaries, and feature structure that are clear before the UI gets polished.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
     title: "AI-powered Workflows",
-    desc: "Turning messy inputs into structured actions, tickets, proposals, summaries, and business-ready outputs.",
+    desc: "AI flows that turn messy inputs into tickets, proposals, summaries, and structured outputs.",
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
     title: "Dashboards & Business Tools",
-    desc: "Designing interfaces for tracking, filtering, reviewing, and acting on operational or financial data.",
+    desc: "Interfaces for tracking, filtering, reviewing, and acting on operational or financial data.",
     className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
     title: "Production Polish",
-    desc: "Improving responsive behavior, testing paths, error states, performance, deployment readiness, and UX details.",
+    desc: "Responsive behavior, error states, performance checks, deployment readiness, and UX details.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },

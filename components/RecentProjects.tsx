@@ -1,6 +1,7 @@
 "use client";
 
 import { FaGithub, FaLocationArrow } from "react-icons/fa6";
+import Image from "next/image";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
@@ -9,8 +10,7 @@ const RecentProjects = () => {
   return (
     <div id="projects" className="py-20">
       <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        Selected <span className="text-purple">full-stack work</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((item) => (
@@ -24,12 +24,21 @@ const RecentProjects = () => {
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimg" />
+                  <Image
+                    src="/bg.png"
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 384px, 80vw"
+                    className="object-cover"
+                  />
                 </div>
-                <img
+                <Image
                   src={item.img}
-                  alt="cover"
-                  className="z-10 absolute bottom-0"
+                  alt={`${item.title} preview`}
+                  width={464}
+                  height={300}
+                  sizes="(min-width: 1024px) 384px, 80vw"
+                  className="z-10 absolute bottom-0 h-auto w-full"
                 />
               </div>
 

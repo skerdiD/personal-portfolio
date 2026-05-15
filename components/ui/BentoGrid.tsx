@@ -1,16 +1,27 @@
+"use client";
+
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
 
 import { BackgroundGradientAnimation } from "./GradientBg";
-import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+const GridGlobe = dynamic(() => import("./GridGlobe"), {
+  ssr: false,
+  loading: () => (
+    <div
+      aria-hidden="true"
+      className="absolute -left-5 top-36 md:top-40 h-96 w-full"
+    />
+  ),
+});
 
 export const BentoGrid = ({
   className,
@@ -56,7 +67,7 @@ export const BentoGridItem = ({
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    const text = "hello@skerdi.dev";
+    const text = "hello.skerdi.dev@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -76,21 +87,26 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
-            <img
+            <Image
               src={img}
               alt={img}
+              fill
+              sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
               className={cn(imgClassName, "object-cover object-center ")}
             />
           )}
         </div>
         <div
-          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
-            } `}
+          className={`absolute right-0 -bottom-5 h-full w-full ${
+            id === 5 && "opacity-80"
+          } `}
         >
           {spareImg && (
-            <img
+            <Image
               src={spareImg}
               alt={spareImg}
+              fill
+              sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
               className="object-cover object-center w-full h-full"
             />
           )}

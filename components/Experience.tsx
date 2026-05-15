@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import { productStrengths } from "@/data";
 import { Button } from "./ui/MovingBorders";
@@ -7,7 +8,7 @@ const Experience = () => {
   return (
     <div className="py-20 w-full">
       <h1 className="heading">
-        How I <span className="text-purple">build products</span>
+        How I <span className="text-purple">ship products</span>
       </h1>
 
       <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
@@ -25,9 +26,11 @@ const Experience = () => {
             className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
           >
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
-              <img
+              <Image
                 src={card.thumbnail}
                 alt={card.thumbnail}
+                width={95}
+                height={87}
                 className="lg:w-32 md:w-20 w-16"
               />
               <div className="lg:ms-5">
