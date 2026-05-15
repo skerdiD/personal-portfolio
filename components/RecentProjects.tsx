@@ -95,7 +95,7 @@ const RecentProjects = () => {
                 <a
                   href={item.github}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="flex justify-center items-center"
                 >
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">

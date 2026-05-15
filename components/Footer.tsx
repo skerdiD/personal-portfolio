@@ -89,7 +89,9 @@ const Footer = () => {
                 key={info.id}
                 href={link}
                 target={link.startsWith("mailto:") ? undefined : "_blank"}
-                rel={link.startsWith("mailto:") ? undefined : "noreferrer"}
+                rel={
+                  link.startsWith("mailto:") ? undefined : "noopener noreferrer"
+                }
                 aria-label={info.name}
                 title={info.name}
                 className={`${classes} cursor-pointer transition-opacity hover:opacity-80`}
