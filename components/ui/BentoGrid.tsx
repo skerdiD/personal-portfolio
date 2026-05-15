@@ -126,6 +126,9 @@ export const BentoGridItem = ({
             </div>
           </>
         )}
+        {id === 2 && (
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_72%,rgba(59,130,246,0.16),transparent_36%),linear-gradient(180deg,rgba(4,7,29,0.18)_0%,rgba(4,7,29,0.9)_100%)]" />
+        )}
         {id === 6 && (
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
@@ -136,6 +139,7 @@ export const BentoGridItem = ({
           className={cn(
             titleClassName,
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-8",
+            id === 2 && "min-h-[21rem] pb-36 md:pb-32",
             id === 6 && "items-center justify-center text-center"
           )}
         >
@@ -144,6 +148,7 @@ export const BentoGridItem = ({
               "relative z-10 max-w-sm",
               id === 1 &&
                 "rounded-2xl bg-black-100/65 p-4 shadow-2xl backdrop-blur-sm",
+              id === 2 && "max-w-[19rem]",
               id === 4 && "max-w-xl rounded-2xl bg-black-100/45 p-5 backdrop-blur-sm md:p-6",
               id === 3 && "max-w-[13rem]",
               id === 6 && "mx-auto max-w-xs"
@@ -158,6 +163,7 @@ export const BentoGridItem = ({
               className={cn(
                 "font-sans text-xl font-bold leading-tight text-white",
                 id === 1 ? "lg:text-3xl" : "lg:text-2xl",
+                id === 2 && "text-2xl lg:text-3xl",
                 id === 6 && "lg:text-xl"
               )}
             >
@@ -187,7 +193,9 @@ export const BentoGridItem = ({
             )}
           </div>
 
-          {id === 2 && <GridGlobe />}
+          {id === 2 && (
+            <GridGlobe className="-right-16 left-auto top-28 opacity-90 md:-right-20 md:top-24" />
+          )}
 
           {id === 3 && (
             <div className="pointer-events-none absolute right-3 top-6 hidden w-fit gap-2 opacity-90 sm:flex lg:right-5 lg:top-8 lg:gap-3">
