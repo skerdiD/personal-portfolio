@@ -74,8 +74,14 @@ export const projects = [
   {
     id: 1,
     title: "BugTriage AI",
-    des: "AI-powered bug triage SaaS that turns messy reports, screenshots, logs, and user complaints into developer-ready tickets.",
-    useCase: "For product and engineering teams that need faster issue intake.",
+    focus: "AI issue intake and engineering handoff",
+    des: "Turns unstructured bug reports, screenshots, logs, and user complaints into clear, developer-ready tickets so teams can move from vague feedback to actionable work faster.",
+    useCase:
+      "Useful for SaaS teams, support-heavy products, and agencies that need a cleaner path from customer reports to engineering tasks.",
+    features: [
+      "Structured AI triage from messy inputs",
+      "Auth, database modeling, monitoring, and abuse protection",
+    ],
     img: "/p1.svg",
     tags: [
       "Next.js",
@@ -92,8 +98,14 @@ export const projects = [
   {
     id: 2,
     title: "Pulse Chat",
-    des: "Real-time team chat app with rooms, messages, reactions, typing indicators, permissions, and polished realtime UX.",
-    useCase: "For teams that need structured, responsive collaboration spaces.",
+    focus: "Realtime collaboration product",
+    des: "A team chat workspace built around fast room-based communication, live messaging, reactions, typing states, and permission-aware interactions.",
+    useCase:
+      "Useful for internal teams, communities, and client portals that need lightweight collaboration without a bloated enterprise tool.",
+    features: [
+      "Realtime rooms, presence-style feedback, and reactions",
+      "Permission-aware UX with tested interaction flows",
+    ],
     img: "/p2.svg",
     tags: [
       "Next.js",
@@ -108,8 +120,14 @@ export const projects = [
   {
     id: 3,
     title: "Portfolia",
-    des: "Investment analytics dashboard for tracking holdings, watchlists, charts, allocation, gains/losses, and portfolio performance.",
-    useCase: "For investors who need clear portfolio visibility and decision support.",
+    focus: "Financial dashboard and data visualization",
+    des: "A portfolio analytics dashboard for organizing holdings, watchlists, allocation, gains and losses, and performance signals in a clean decision-support interface.",
+    useCase:
+      "Useful for investors, finance learners, and small advisory workflows that need readable portfolio visibility instead of spreadsheet sprawl.",
+    features: [
+      "Chart-driven portfolio views and watchlists",
+      "Protected dashboard patterns with relational data",
+    ],
     img: "/p3.svg",
     tags: ["Next.js", "TypeScript", "Recharts", "PostgreSQL", "Clerk", "Tailwind"],
     github: "https://github.com/skerdiD/Portfolia",
@@ -117,8 +135,14 @@ export const projects = [
   {
     id: 4,
     title: "ScopeFlow AI",
-    des: "AI proposal workspace that converts raw discovery notes into proposals, deliverables, milestones, risks, and client-ready scope.",
-    useCase: "For freelancers and agencies turning discovery calls into sellable scope.",
+    focus: "AI proposal and scope generation",
+    des: "Converts rough discovery notes into organized proposals, deliverables, milestones, risks, and scope language that can be reviewed and refined for clients.",
+    useCase:
+      "Useful for freelancers, consultants, and agencies that want to move from sales calls to professional proposals with less manual rewriting.",
+    features: [
+      "AI-assisted scoping from raw notes",
+      "Client-ready structure for deliverables, risks, and milestones",
+    ],
     img: "/p4.svg",
     tags: ["React", "TypeScript", "AI", "Supabase", "Tailwind", "SaaS"],
     github: "https://github.com/skerdiD/ScopeFlow-AI",
@@ -126,8 +150,14 @@ export const projects = [
   {
     id: 5,
     title: "LeadFlow",
-    des: "CRM and lead management SaaS for freelancers and small agencies to track leads, pipeline status, follow-ups, and opportunities.",
-    useCase: "For service businesses that need a simple pipeline from lead to close.",
+    focus: "CRM workflow for small service teams",
+    des: "A lead management SaaS for tracking prospects, pipeline stages, follow-ups, and opportunities so small teams can manage sales without losing context.",
+    useCase:
+      "Useful for freelancers, studios, and local service businesses that need a focused pipeline from first contact to close.",
+    features: [
+      "Pipeline tracking, lead status, and follow-up workflows",
+      "Authenticated SaaS structure with persistent business data",
+    ],
     img: "/p1.svg",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "Clerk", "Tailwind", "SaaS"],
     github: "https://github.com/skerdiD/lead-flow",
@@ -242,10 +272,12 @@ export const socialMedia = [
   {
     id: 3,
     name: "X/Twitter",
+    // Placeholder until Skerdi's exact public X profile is finalized.
+    link: "https://x.com/skerdiD",
   },
   {
     id: 4,
     name: "Email",
-    link: "mailto:hello@skerdi.dev",
+    link: "mailto:hello.skerdi.dev@gmail.com",
   },
 ];
