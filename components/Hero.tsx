@@ -1,7 +1,52 @@
+import { Fragment, type CSSProperties } from "react";
 import { FaLocationArrow } from "react-icons/fa6";
 
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
+
+const heroHeadline =
+  "Building SaaS MVPs, Dashboards, and AI-Powered Features";
+
+const highlightedHeadlineWords = new Set([
+  "SaaS",
+  "MVPs",
+  "Dashboards",
+  "AI-Powered",
+  "Features",
+]);
+
+const WordReveal = ({ text }: { text: string }) => {
+  const words = text.split(" ");
+
+  return (
+    <>
+      {words.map((word, index) => {
+        const normalizedWord = word.replace(/[,.]/g, "");
+        const isHighlighted = highlightedHeadlineWords.has(normalizedWord);
+
+        return (
+          <Fragment key={`${word}-${index}`}>
+            <span
+              className="hero-word-reveal inline-block align-baseline"
+              style={{ "--word-delay": `${70 + index * 44}ms` } as CSSProperties}
+            >
+              <span
+                className={
+                  isHighlighted
+                    ? "bg-gradient-to-r from-white via-purple to-blue-100 bg-clip-text text-transparent"
+                    : "text-white"
+                }
+              >
+                {word}
+              </span>
+            </span>
+            {index < words.length - 1 ? " " : null}
+          </Fragment>
+        );
+      })}
+    </>
+  );
+};
 
 const Hero = () => {
   return (
@@ -31,24 +76,13 @@ const Hero = () => {
 
       <div className="relative z-10 flex w-full justify-center">
         <div className="flex w-full max-w-6xl flex-col items-center justify-center text-center">
-          <div className="hero-enter-soft inline-flex items-center gap-3 rounded-full border border-purple/30 bg-[linear-gradient(90deg,rgba(203,172,249,0.16),rgba(17,25,40,0.78),rgba(228,236,255,0.1))] px-5 py-2.5 text-center text-sm font-semibold text-blue-100 shadow-[0_0_40px_rgba(203,172,249,0.16)] backdrop-blur-md">
+          <div className="hero-enter-soft inline-flex items-center gap-3 rounded-full border border-purple/35 bg-[linear-gradient(90deg,rgba(203,172,249,0.2),rgba(17,25,40,0.82),rgba(96,165,250,0.12))] px-5 py-2.5 text-center text-sm font-semibold text-blue-100 shadow-[0_0_44px_rgba(203,172,249,0.2)] backdrop-blur-md sm:px-6 sm:py-3">
             <span className="h-2.5 w-2.5 rounded-full bg-purple shadow-[0_0_16px_rgba(203,172,249,0.85)]" />
             <span>Hi, I&apos;m Skerdi, full-stack developer</span>
           </div>
 
           <h1 className="hero-enter-headline mt-6 max-w-5xl text-4xl font-bold leading-[1.08] tracking-normal text-white [text-wrap:balance] md:text-6xl lg:text-7xl">
-            Building{" "}
-            <span className="bg-gradient-to-r from-white via-purple to-blue-100 bg-clip-text text-transparent">
-              SaaS MVPs
-            </span>
-            ,{" "}
-            <span className="bg-gradient-to-r from-white via-purple to-blue-100 bg-clip-text text-transparent">
-              Dashboards
-            </span>
-            , and{" "}
-            <span className="bg-gradient-to-r from-white via-purple to-blue-100 bg-clip-text text-transparent">
-              AI-Powered Features
-            </span>
+            <WordReveal text={heroHeadline} />
           </h1>
 
           <p className="hero-enter-soft hero-enter-delay-2 mt-6 max-w-3xl text-sm leading-relaxed text-white-200 md:text-lg lg:text-xl">

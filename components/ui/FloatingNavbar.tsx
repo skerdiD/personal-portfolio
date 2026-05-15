@@ -1,5 +1,10 @@
+"use client";
+
+import { MouseEvent } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+
+const NAV_SCROLL_OFFSET = 96;
 
 export const FloatingNav = ({
   navItems,
@@ -12,6 +17,34 @@ export const FloatingNav = ({
   }[];
   className?: string;
 }) => {
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, link: string) => {
+    if (!link.startsWith("#")) {
+      return;
+    }
+
+    const target = document.querySelector(link);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const targetTop =
+      target.getBoundingClientRect().top + window.scrollY - NAV_SCROLL_OFFSET;
+
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${window.location.search}`
+    );
+
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: "auto",
+    });
+  };
+
   return (
     <nav
       aria-label="Primary navigation"
@@ -24,6 +57,7 @@ export const FloatingNav = ({
         <Link
           key={navItem.link}
           href={navItem.link}
+          onClick={(event) => handleNavClick(event, navItem.link)}
           className="relative flex items-center text-sm font-medium text-white-100 transition-colors hover:text-purple"
         >
           <span>{navItem.name}</span>
