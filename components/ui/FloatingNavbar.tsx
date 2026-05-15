@@ -1,11 +1,3 @@
-"use client";
-import React, { useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -20,64 +12,23 @@ export const FloatingNav = ({
   }[];
   className?: string;
 }) => {
-  const { scrollYProgress } = useScroll();
-
-  const [visible, setVisible] = useState(true);
-
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
-
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(true);
-      } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-      }
-    }
-  });
-
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        initial={{
-          opacity: 1,
-          y: -100,
-        }}
-        animate={{
-          y: visible ? 0 : -100,
-          opacity: visible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.2,
-        }}
-        className={cn(
-          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
-          className
-        )}
-        style={{
-          backdropFilter: "blur(16px) saturate(180%)",
-          backgroundColor: "rgba(17, 25, 40, 0.75)",
-          borderRadius: "12px",
-          border: "1px solid rgba(255, 255, 255, 0.125)",
-        }}
-      >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className=" text-sm !cursor-pointer">{navItem.name}</span>
-          </Link>
-        ))}
-      </motion.div>
-    </AnimatePresence>
+    <nav
+      aria-label="Primary navigation"
+      className={cn(
+        "fixed inset-x-4 top-4 z-[5000] mx-auto flex w-fit max-w-[calc(100vw-2rem)] items-center justify-center gap-4 rounded-2xl border border-white/[0.12] bg-[#111928]/80 px-5 py-3 shadow-[0px_8px_32px_rgba(0,0,0,0.24)] backdrop-blur-xl backdrop-saturate-150 md:top-6 md:gap-6 md:px-7 md:py-4",
+        className
+      )}
+    >
+      {navItems.map((navItem) => (
+        <Link
+          key={navItem.link}
+          href={navItem.link}
+          className="relative flex items-center text-sm font-medium text-white-100 transition-colors hover:text-purple"
+        >
+          <span>{navItem.name}</span>
+        </Link>
+      ))}
+    </nav>
   );
 };

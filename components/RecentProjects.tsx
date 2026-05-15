@@ -8,9 +8,9 @@ import { PinContainer } from "./ui/Pin";
 
 const RecentProjects = () => {
   return (
-    <div id="projects" className="py-20">
+    <div id="projects" className="scroll-mt-24 py-20 md:scroll-mt-28">
       <h1 className="heading">
-        Selected <span className="text-purple">full-stack work</span>
+        Selected <span className="text-purple">SaaS and dashboard work</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((item) => (

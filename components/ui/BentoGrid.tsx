@@ -47,6 +47,7 @@ export const BentoGridItem = ({
   id,
   title,
   description,
+  body,
   img,
   imgClassName,
   titleClassName,
@@ -56,6 +57,7 @@ export const BentoGridItem = ({
   id: number;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
+  body?: string | React.ReactNode;
   img?: string;
   imgClassName?: string;
   titleClassName?: string;
@@ -97,9 +99,11 @@ export const BentoGridItem = ({
           )}
         </div>
         <div
-          className={`absolute right-0 -bottom-5 h-full w-full ${
+          className={cn(
+            "absolute right-0 -bottom-5 h-full w-full",
+            id === 4 && "opacity-25",
             id === 5 && "opacity-80"
-          } `}
+          )}
         >
           {spareImg && (
             <Image
@@ -107,10 +111,21 @@ export const BentoGridItem = ({
               alt={spareImg}
               fill
               sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
-              className="object-cover object-center w-full h-full"
+              className={cn(
+                "object-cover object-center w-full h-full",
+                id === 4 && "object-right-bottom"
+              )}
             />
           )}
         </div>
+        {id === 4 && (
+          <>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(203,172,249,0.18),transparent_34%),linear-gradient(90deg,rgba(4,7,29,0.95)_0%,rgba(4,7,29,0.86)_48%,rgba(4,7,29,0.54)_100%)]" />
+            <div className="pointer-events-none absolute right-8 top-8 hidden w-32 rounded-full border border-purple/25 bg-purple/10 px-4 py-2 text-center text-xs font-semibold text-blue-100 backdrop-blur-md md:block">
+              AI workflows
+            </div>
+          </>
+        )}
         {id === 6 && (
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
@@ -120,44 +135,79 @@ export const BentoGridItem = ({
         <div
           className={cn(
             titleClassName,
-            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
+            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-8",
+            id === 6 && "items-center justify-center text-center"
           )}
         >
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
-            {description}
-          </div>
           <div
             className={cn(
-              "font-sans text-lg max-w-96 font-bold z-10",
-              id === 1 ? "lg:text-2xl leading-snug" : "lg:text-3xl"
+              "relative z-10 max-w-sm",
+              id === 1 &&
+                "rounded-2xl bg-black-100/65 p-4 shadow-2xl backdrop-blur-sm",
+              id === 4 && "max-w-xl rounded-2xl bg-black-100/45 p-5 backdrop-blur-sm md:p-6",
+              id === 3 && "max-w-[13rem]",
+              id === 6 && "mx-auto max-w-xs"
             )}
           >
-            {title}
+            {description && (
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-white-200/70">
+                {description}
+              </p>
+            )}
+            <div
+              className={cn(
+                "font-sans text-xl font-bold leading-tight text-white",
+                id === 1 ? "lg:text-3xl" : "lg:text-2xl",
+                id === 6 && "lg:text-xl"
+              )}
+            >
+              {title}
+            </div>
+            {body && (
+              <p className="mt-3 text-sm leading-relaxed text-white-100">
+                {body}
+              </p>
+            )}
+            {id === 4 && (
+              <div className="mt-5 flex flex-wrap gap-2">
+                {[
+                  "Summaries",
+                  "Proposal drafts",
+                  "Bug triage",
+                  "Structured output",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/[0.12] bg-white/[0.06] px-3 py-1.5 text-xs font-medium text-white-100"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
           {id === 2 && <GridGlobe />}
 
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-4 w-fit absolute -right-3 lg:-right-2">
+            <div className="pointer-events-none absolute right-3 top-6 hidden w-fit gap-2 opacity-90 sm:flex lg:right-5 lg:top-8 lg:gap-3">
               <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-3 lg:px-3 py-2 px-3 text-xs lg:text-sm opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-[10px] text-white-100 opacity-60 lg:text-xs lg:opacity-100"
                   >
                     {item}
                   </span>
                 ))}
-                <span className="lg:py-3 lg:px-3 py-3 px-3 rounded-lg text-center bg-[#10132E]"></span>
+                <span className="rounded-lg bg-[#10132E] px-3 py-3 text-center"></span>
               </div>
               <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
-                <span className="lg:py-3 lg:px-3 py-3 px-3 rounded-lg text-center bg-[#10132E]"></span>
+                <span className="rounded-lg bg-[#10132E] px-3 py-3 text-center"></span>
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-3 lg:px-3 py-2 px-3 text-xs lg:text-sm opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-[10px] text-white-100 opacity-60 lg:text-xs lg:opacity-100"
                   >
                     {item}
                   </span>

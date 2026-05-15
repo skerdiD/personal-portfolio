@@ -1,6 +1,14 @@
 import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  webpack: (config, { dev }) => {
+    if (dev) {
+      config.cache = false;
+    }
+
+    return config;
+  },
+};
 
 const hasSentryAuthToken = Boolean(process.env.SENTRY_AUTH_TOKEN);
 

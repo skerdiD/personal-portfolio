@@ -17,9 +17,9 @@ const Approach = () => {
       </h1>
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         <Card
-          title="Plan the Product"
+          title="Plan the MVP"
           icon={<AceternityIcon order="Phase 1" />}
-          des="I map the goal, user flow, data model, AI touchpoints, and core
+          des="I map the goal, user flow, dashboard needs, data model, and core
           business logic before building."
         >
           <CanvasRevealEffect
@@ -28,10 +28,10 @@ const Approach = () => {
           />
         </Card>
         <Card
-          title="Build the Workflow"
+          title="Build the Product"
           icon={<AceternityIcon order="Phase 2" />}
-          des="I build the UI, APIs, auth, database, and AI pieces in focused
-          passes so the product stays usable as it grows."
+          des="I build the UI, APIs, auth, database, and practical AI pieces in
+          focused passes so the product stays usable."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -44,10 +44,10 @@ const Approach = () => {
           />
         </Card>
         <Card
-          title="Polish for Launch"
+          title="Polish the Experience"
           icon={<AceternityIcon order="Phase 3" />}
           des="I tighten responsive states, errors, performance, deployment
-          checks, and handoff details before release."
+          checks, and React/Next.js details before release."
         >
           <CanvasRevealEffect
             animationSpeed={3}

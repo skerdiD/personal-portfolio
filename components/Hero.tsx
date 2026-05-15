@@ -2,11 +2,10 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
-import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36">
+    <section className="relative left-1/2 mx-[-50vw] flex min-h-[94svh] w-screen items-center justify-center overflow-hidden px-5 pb-16 pt-32 sm:px-10 md:min-h-[90vh] md:pt-28">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -20,50 +19,61 @@ const Hero = () => {
       </div>
 
       <div
-        className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
-       absolute top-0 left-0 flex items-center justify-center"
+        className="absolute inset-0 flex h-full w-full items-center justify-center bg-white bg-grid-black-100/[0.2] dark:bg-black-100 dark:bg-grid-white/[0.035]"
       >
+        <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple/20 blur-[120px] md:h-96 md:w-96" />
+        <div className="absolute left-[55%] top-[42%] h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100/10 blur-[100px] md:h-80 md:w-80" />
         <div
           className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100
          bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
         />
       </div>
 
-      <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Full-stack SaaS, dashboards, and AI features
+      <div className="relative z-10 flex w-full justify-center">
+        <div className="flex w-full max-w-6xl flex-col items-center justify-center text-center">
+          <div className="hero-enter-soft inline-flex items-center gap-3 rounded-full border border-purple/30 bg-[linear-gradient(90deg,rgba(203,172,249,0.16),rgba(17,25,40,0.78),rgba(228,236,255,0.1))] px-5 py-2.5 text-center text-sm font-semibold text-blue-100 shadow-[0_0_40px_rgba(203,172,249,0.16)] backdrop-blur-md">
+            <span className="h-2.5 w-2.5 rounded-full bg-purple shadow-[0_0_16px_rgba(203,172,249,0.85)]" />
+            <span>Hi, I&apos;m Skerdi, full-stack developer</span>
+          </div>
+
+          <h1 className="hero-enter-headline mt-6 max-w-5xl text-4xl font-bold leading-[1.08] tracking-normal text-white [text-wrap:balance] md:text-6xl lg:text-7xl">
+            Building{" "}
+            <span className="bg-gradient-to-r from-white via-purple to-blue-100 bg-clip-text text-transparent">
+              SaaS MVPs
+            </span>
+            ,{" "}
+            <span className="bg-gradient-to-r from-white via-purple to-blue-100 bg-clip-text text-transparent">
+              Dashboards
+            </span>
+            , and{" "}
+            <span className="bg-gradient-to-r from-white via-purple to-blue-100 bg-clip-text text-transparent">
+              AI-Powered Features
+            </span>
+          </h1>
+
+          <p className="hero-enter-soft hero-enter-delay-2 mt-6 max-w-3xl text-sm leading-relaxed text-white-200 md:text-lg lg:text-xl">
+            I build clean web products with strong UI, auth, databases,
+            business logic, and practical AI integrations.
           </p>
 
-          <TextGenerateEffect
-            words="Skerdi builds full-stack SaaS apps, dashboards, and AI-powered features."
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
-          />
-
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Clean interfaces, reliable backend logic, auth, databases, and AI
-            workflows built for real products.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="hero-enter-soft hero-enter-delay-3 mt-8 flex w-full max-w-md flex-col items-center justify-center gap-4 sm:flex-row">
             <a href="#projects">
               <MagicButton
-                title="View Projects"
+                title="View my work"
                 icon={<FaLocationArrow />}
                 position="right"
               />
             </a>
-            <a href="#contact">
-              <MagicButton
-                title="Contact Me"
-                icon={<FaLocationArrow />}
-                position="right"
-              />
+            <a
+              href="#contact"
+              className="inline-flex h-12 w-full items-center justify-center rounded-lg border border-white/[.16] bg-black-200 px-7 text-sm font-medium text-white-100 backdrop-blur-lg transition duration-200 hover:-translate-y-0.5 hover:border-purple/35 hover:text-white active:translate-y-px sm:w-auto"
+            >
+              Contact me
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

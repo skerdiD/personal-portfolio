@@ -70,6 +70,9 @@
   * {
     @apply border-border !scroll-smooth;
   }
+  html {
+    scroll-padding-top: 6.5rem;
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -81,5 +84,54 @@
 @layer utilities {
   .heading {
     @apply font-bold text-4xl md:text-5xl text-center;
+  }
+
+  .hero-enter-soft {
+    animation: hero-enter-soft 520ms ease-out both;
+  }
+
+  .hero-enter-headline {
+    animation: hero-enter-headline 560ms ease-out 90ms both;
+  }
+
+  .hero-enter-delay-2 {
+    animation-delay: 180ms;
+  }
+
+  .hero-enter-delay-3 {
+    animation-delay: 270ms;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 5.5rem;
+  }
+}
+
+@keyframes hero-enter-soft {
+  from {
+    opacity: 0.86;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-enter-headline {
+  from {
+    transform: translateY(12px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter-soft,
+  .hero-enter-headline {
+    animation: none;
   }
 }

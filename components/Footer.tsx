@@ -23,7 +23,7 @@ const contactLink =
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
+    <footer className="w-full scroll-mt-24 pt-20 pb-10 md:scroll-mt-28" id="contact">
       <div className="w-full absolute left-0 -bottom-72 min-h-96">
         <Image
           src="/footer-grid.svg"
@@ -36,15 +36,16 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Ready to build a <span className="text-purple">SaaS app</span>,
-          dashboard, or AI feature?
+          Need a <span className="text-purple">SaaS MVP</span>, dashboard, or
+          AI-powered feature?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to turn a clear product idea into a focused, usable web app.
+          Reach out to turn a clear product idea into a clean, functional web
+          app.
         </p>
         <p className="text-white-200/80 mb-6 max-w-2xl text-center text-sm">
-          Available for freelance and collaboration work on full-stack apps,
-          dashboards, AI features, and practical product workflows.
+          Available for SaaS MVPs, admin dashboards, AI integrations,
+          full-stack features, and React/Next.js improvements.
         </p>
         <a href={contactLink}>
           <MagicButton
