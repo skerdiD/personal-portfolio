@@ -1,10 +1,10 @@
 "use client";
 
-import { FaGithub, FaLocationArrow } from "react-icons/fa6";
 import Image from "next/image";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
+import { ArrowUpRightIcon, GitHubIcon } from "./ui/Icons";
 
 const RecentProjects = () => {
   return (
@@ -88,7 +88,7 @@ const RecentProjects = () => {
 
               <div className="flex items-center justify-between mt-5 mb-3">
                 <div className="flex items-center gap-2 text-white-200">
-                  <FaGithub className="text-lg" />
+                  <GitHubIcon className="h-5 w-5" />
                   <span className="text-xs md:text-sm">GitHub</span>
                 </div>
 
@@ -101,7 +101,7 @@ const RecentProjects = () => {
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
                     View GitHub
                   </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  <ArrowUpRightIcon className="ms-3 h-4 w-4 text-purple" />
                 </a>
               </div>
             </PinContainer>

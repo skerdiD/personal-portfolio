@@ -1,13 +1,6 @@
 "use client";
 
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import dynamic from "next/dynamic";
-
-const CanvasRevealEffect = dynamic(
-  () => import("./ui/CanvasRevealEffect").then((mod) => mod.CanvasRevealEffect),
-  { ssr: false }
-);
 
 const Approach = () => {
   return (
@@ -22,10 +15,7 @@ const Approach = () => {
           des="I map the goal, user flow, dashboard needs, data model, and core
           business logic before building."
         >
-          <CanvasRevealEffect
-            animationSpeed={5.1}
-            containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
-          />
+          <LightweightReveal variant="emerald" />
         </Card>
         <Card
           title="Build the Product"
@@ -33,15 +23,7 @@ const Approach = () => {
           des="I build the UI, APIs, auth, database, and practical AI pieces in
           focused passes so the product stays usable."
         >
-          <CanvasRevealEffect
-            animationSpeed={3}
-            containerClassName="bg-pink-900 rounded-3xl overflow-hidden"
-            colors={[
-              [255, 166, 158],
-              [221, 255, 247],
-            ]}
-            dotSize={2}
-          />
+          <LightweightReveal variant="rose" />
         </Card>
         <Card
           title="Polish the Experience"
@@ -49,11 +31,7 @@ const Approach = () => {
           des="I tighten responsive states, errors, performance, deployment
           checks, and React/Next.js details before release."
         >
-          <CanvasRevealEffect
-            animationSpeed={3}
-            containerClassName="bg-sky-600 rounded-3xl overflow-hidden"
-            colors={[[125, 211, 252]]}
-          />
+          <LightweightReveal variant="sky" />
         </Card>
       </div>
     </section>
@@ -61,6 +39,26 @@ const Approach = () => {
 };
 
 export default Approach;
+
+const revealStyles = {
+  emerald:
+    "bg-[radial-gradient(circle_at_25%_20%,rgba(16,185,129,0.42),transparent_28%),radial-gradient(circle_at_78%_72%,rgba(203,172,249,0.24),transparent_30%),linear-gradient(135deg,rgba(6,78,59,0.92),rgba(4,7,29,0.96))]",
+  rose:
+    "bg-[radial-gradient(circle_at_28%_32%,rgba(244,114,182,0.34),transparent_30%),radial-gradient(circle_at_74%_18%,rgba(221,255,247,0.2),transparent_24%),linear-gradient(135deg,rgba(131,24,67,0.88),rgba(4,7,29,0.96))]",
+  sky:
+    "bg-[radial-gradient(circle_at_24%_24%,rgba(125,211,252,0.36),transparent_30%),radial-gradient(circle_at_76%_76%,rgba(59,130,246,0.26),transparent_28%),linear-gradient(135deg,rgba(3,105,161,0.88),rgba(4,7,29,0.96))]",
+};
+
+const LightweightReveal = ({ variant }: { variant: keyof typeof revealStyles }) => {
+  return (
+    <div className={`relative h-full w-full overflow-hidden rounded-3xl ${revealStyles[variant]}`}>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:28px_28px] opacity-45" />
+      <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15" />
+      <div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple/25" />
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black-100 to-transparent" />
+    </div>
+  );
+};
 
 const Card = ({
   title,
@@ -91,17 +89,11 @@ const Card = ({
       <Icon className="absolute h-10 w-10 -top-3 -right-3 dark:text-white text-black opacity-30" />
       <Icon className="absolute h-10 w-10 -bottom-3 -right-3 dark:text-white text-black opacity-30" />
 
-      <AnimatePresence>
-        {hovered && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="h-full w-full absolute inset-0"
-          >
-            {children}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {hovered && (
+        <div className="absolute inset-0 h-full w-full animate-[fade-in_180ms_ease-out]">
+          {children}
+        </div>
+      )}
 
       <div className="relative z-20 px-10">
         <div

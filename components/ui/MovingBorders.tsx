@@ -1,13 +1,5 @@
 "use client";
-import React from "react";
-import {
-  motion,
-  useAnimationFrame,
-  useMotionTemplate,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
-import { useRef } from "react";
+import React, { type CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 
 export function Button({
@@ -18,6 +10,7 @@ export function Button({
   borderClassName,
   duration,
   className,
+  style,
   ...otherProps
 }: {
   borderRadius?: string;
@@ -27,32 +20,31 @@ export function Button({
   borderClassName?: string;
   duration?: number;
   className?: string;
+  style?: CSSProperties;
   [key: string]: any;
 }) {
+  const durationMs = duration ?? 8000;
+  const componentStyle = {
+    borderRadius: borderRadius,
+    "--border-duration": `${durationMs}ms`,
+    ...style,
+  } as CSSProperties;
+
   return (
     <Component
       className={cn(
         "bg-transparent relative text-xl p-[1px] overflow-hidden md:col-span-2 md:row-span-1",
         containerClassName
       )}
-      style={{
-        borderRadius: borderRadius,
-      }}
+      style={componentStyle}
       {...otherProps}
     >
       <div
-        className="absolute inset-0 rounde-[1.75rem]"
-        style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
-      >
-        <MovingBorder duration={duration} rx="30%" ry="30%">
-          <div
-            className={cn(
-              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(#CBACF9_40%,transparent_60%)]",
-              borderClassName
-            )}
-          />
-        </MovingBorder>
-      </div>
+        className={cn(
+          "absolute -inset-1 opacity-80 [animation:spin_var(--border-duration)_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0deg,transparent_70deg,#CBACF9_120deg,transparent_170deg,transparent_360deg)]",
+          borderClassName
+        )}
+      />
 
       <div
         className={cn(
@@ -68,72 +60,3 @@ export function Button({
     </Component>
   );
 }
-
-export const MovingBorder = ({
-  children,
-  duration = 2000,
-  rx,
-  ry,
-  ...otherProps
-}: {
-  children: React.ReactNode;
-  duration?: number;
-  rx?: string;
-  ry?: string;
-  [key: string]: any;
-}) => {
-  const pathRef = useRef<any>();
-  const progress = useMotionValue<number>(0);
-
-  useAnimationFrame((time) => {
-    const length = pathRef.current?.getTotalLength();
-    if (length) {
-      const pxPerMillisecond = length / duration;
-      progress.set((time * pxPerMillisecond) % length);
-    }
-  });
-
-  const x = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).x
-  );
-  const y = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).y
-  );
-
-  const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
-
-  return (
-    <>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        className="absolute h-full w-full"
-        width="100%"
-        height="100%"
-        {...otherProps}
-      >
-        <rect
-          fill="none"
-          width="100%"
-          height="100%"
-          rx={rx}
-          ry={ry}
-          ref={pathRef}
-        />
-      </svg>
-      <motion.div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          display: "inline-block",
-          transform,
-        }}
-      >
-        {children}
-      </motion.div>
-    </>
-  );
-};

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { IoCopyOutline } from "react-icons/io5";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
@@ -11,17 +10,9 @@ import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
+import { CopyIcon } from "./Icons";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-const GridGlobe = dynamic(() => import("./GridGlobe"), {
-  ssr: false,
-  loading: () => (
-    <div
-      aria-hidden="true"
-      className="absolute -left-5 top-36 md:top-40 h-96 w-full"
-    />
-  ),
-});
 
 export const BentoGrid = ({
   className,
@@ -194,7 +185,7 @@ export const BentoGridItem = ({
           </div>
 
           {id === 2 && (
-            <GridGlobe className="-right-16 left-auto top-28 opacity-90 md:-right-20 md:top-24" />
+            <LightweightGlobe />
           )}
 
           {id === 3 && (
@@ -238,7 +229,7 @@ export const BentoGridItem = ({
 
               <MagicButton
                 title={copied ? "Email copied" : "Copy my email address"}
-                icon={<IoCopyOutline />}
+                icon={<CopyIcon className="h-5 w-5" />}
                 position="left"
                 handleClick={handleCopy}
                 otherClasses="!bg-[#161A31]"
@@ -246,6 +237,79 @@ export const BentoGridItem = ({
             </div>
           )}
         </div>
+      </div>
+    </div>
+  );
+};
+
+const orbitNodes = [
+  "left-[18%] top-[38%]",
+  "left-[36%] top-[23%]",
+  "left-[58%] top-[34%]",
+  "left-[74%] top-[55%]",
+  "left-[46%] top-[68%]",
+];
+
+const LightweightGlobe = () => {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute -right-16 top-24 h-72 w-full opacity-90 md:-right-20 md:top-20"
+    >
+      <div className="relative ml-auto h-72 w-72 md:mr-4">
+        <div className="absolute inset-4 rounded-full border border-purple/25 bg-[radial-gradient(circle_at_35%_30%,rgba(203,172,249,0.26),rgba(59,130,246,0.12)_38%,rgba(4,7,29,0)_70%)] shadow-[0_0_70px_rgba(203,172,249,0.18)]" />
+        <div className="absolute inset-12 rounded-full border border-blue-100/15" />
+        <div className="absolute left-1/2 top-8 h-56 w-px -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-blue-100/25 to-transparent" />
+        <div className="absolute left-8 top-1/2 h-px w-56 -translate-y-1/2 rounded-full bg-gradient-to-r from-transparent via-purple/30 to-transparent" />
+        <div className="absolute inset-10 rotate-12 rounded-full border border-white/10" />
+        <div className="absolute inset-10 -rotate-12 rounded-full border border-white/10" />
+        <svg
+          className="absolute inset-0 h-full w-full"
+          viewBox="0 0 288 288"
+          fill="none"
+        >
+          <path
+            d="M54 162 C92 110, 144 106, 232 78"
+            stroke="url(#orbit-a)"
+            strokeWidth="1.5"
+            strokeDasharray="5 8"
+          />
+          <path
+            d="M42 194 C94 168, 142 184, 238 132"
+            stroke="url(#orbit-b)"
+            strokeWidth="1.5"
+            strokeDasharray="4 9"
+          />
+          <path
+            d="M78 82 C116 144, 168 170, 226 214"
+            stroke="url(#orbit-c)"
+            strokeWidth="1.5"
+            strokeDasharray="4 9"
+          />
+          <defs>
+            <linearGradient id="orbit-a" x1="54" y1="162" x2="232" y2="78">
+              <stop stopColor="#CBACF9" stopOpacity="0" />
+              <stop offset="0.52" stopColor="#CBACF9" stopOpacity="0.7" />
+              <stop offset="1" stopColor="#E4ECFF" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="orbit-b" x1="42" y1="194" x2="238" y2="132">
+              <stop stopColor="#60A5FA" stopOpacity="0" />
+              <stop offset="0.5" stopColor="#60A5FA" stopOpacity="0.55" />
+              <stop offset="1" stopColor="#CBACF9" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="orbit-c" x1="78" y1="82" x2="226" y2="214">
+              <stop stopColor="#E4ECFF" stopOpacity="0" />
+              <stop offset="0.5" stopColor="#E4ECFF" stopOpacity="0.38" />
+              <stop offset="1" stopColor="#CBACF9" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+        {orbitNodes.map((position) => (
+          <span
+            key={position}
+            className={`absolute h-2.5 w-2.5 rounded-full bg-blue-100 shadow-[0_0_18px_rgba(228,236,255,0.75)] ${position}`}
+          />
+        ))}
       </div>
     </div>
   );

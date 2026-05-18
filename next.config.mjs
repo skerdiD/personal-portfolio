@@ -1,4 +1,3 @@
-import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -66,31 +65,32 @@ const nextConfig = {
       },
     ];
   },
-  webpack: (config, { dev }) => {
-    if (dev) {
-      config.cache = false;
-    }
-
-    return config;
-  },
 };
 
 const hasSentryAuthToken = Boolean(process.env.SENTRY_AUTH_TOKEN);
 
-export default withSentryConfig(
-  nextConfig,
-  {
-    silent: true,
-    org: process.env.SENTRY_ORG,
-    project: process.env.SENTRY_PROJECT,
-    authToken: process.env.SENTRY_AUTH_TOKEN,
-    dryRun: !hasSentryAuthToken,
-  },
-  {
-    widenClientFileUpload: true,
-    transpileClientSDK: true,
-    hideSourceMaps: true,
-    disableLogger: true,
-    automaticVercelMonitors: true,
-  }
-);
+let config = nextConfig;
+
+if (isProduction) {
+  const { withSentryConfig } = await import("@sentry/nextjs");
+
+  config = withSentryConfig(
+    nextConfig,
+    {
+      silent: true,
+      org: process.env.SENTRY_ORG,
+      project: process.env.SENTRY_PROJECT,
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+      dryRun: !hasSentryAuthToken,
+    },
+    {
+      widenClientFileUpload: true,
+      transpileClientSDK: true,
+      hideSourceMaps: true,
+      disableLogger: true,
+      automaticVercelMonitors: true,
+    }
+  );
+}
+
+export default config;

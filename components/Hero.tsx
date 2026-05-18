@@ -1,7 +1,7 @@
 import { Fragment, type CSSProperties } from "react";
-import { FaLocationArrow } from "react-icons/fa6";
 
 import MagicButton from "./MagicButton";
+import { ArrowUpRightIcon } from "./ui/Icons";
 import { Spotlight } from "./ui/Spotlight";
 
 const heroHeadline =
@@ -103,7 +103,7 @@ const Hero = () => {
             <a href="#projects">
               <MagicButton
                 title="View my work"
-                icon={<FaLocationArrow />}
+                icon={<ArrowUpRightIcon className="h-4 w-4" />}
                 position="right"
               />
             </a>
