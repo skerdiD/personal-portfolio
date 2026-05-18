@@ -29,7 +29,7 @@ const WordReveal = ({ text }: { text: string }) => {
           <Fragment key={`${word}-${index}`}>
             <span
               className="hero-word-reveal inline-block align-baseline"
-              style={{ "--word-delay": `${70 + index * 44}ms` } as CSSProperties}
+              style={{ "--word-delay": `${320 + index * 48}ms` } as CSSProperties}
             >
               <span
                 className={
@@ -77,12 +77,18 @@ const Hero = () => {
 
       <div className="relative z-10 flex w-full justify-center">
         <div className="flex w-full max-w-6xl flex-col items-center justify-center text-center">
-          <div className="hero-enter-soft inline-flex items-center gap-3 rounded-full border border-purple/35 bg-[linear-gradient(90deg,rgba(203,172,249,0.2),rgba(17,25,40,0.82),rgba(96,165,250,0.12))] px-5 py-2.5 text-center text-sm font-semibold text-blue-100 shadow-[0_0_44px_rgba(203,172,249,0.2)] backdrop-blur-md sm:px-6 sm:py-3">
+          <div
+            className="hero-enter-soft inline-flex items-center gap-3 rounded-full border border-purple/35 bg-[linear-gradient(90deg,rgba(203,172,249,0.2),rgba(17,25,40,0.82),rgba(96,165,250,0.12))] px-5 py-2.5 text-center text-sm font-semibold text-blue-100 shadow-[0_0_44px_rgba(203,172,249,0.2)] backdrop-blur-md sm:px-6 sm:py-3"
+            style={{ "--hero-delay": "100ms" } as CSSProperties}
+          >
             <span className="h-2.5 w-2.5 rounded-full bg-purple shadow-[0_0_16px_rgba(203,172,249,0.85)]" />
             <span>Full-Stack Developer</span>
           </div>
 
-          <p className="hero-enter-soft mt-5 text-2xl font-semibold leading-tight text-white [text-wrap:balance] md:text-4xl">
+          <p
+            className="hero-enter-soft mt-5 text-2xl font-semibold leading-tight text-white [text-wrap:balance] md:text-4xl"
+            style={{ "--hero-delay": "200ms" } as CSSProperties}
+          >
             Hi, I&apos;m{" "}
             <span className="bg-gradient-to-r from-white via-purple to-blue-100 bg-clip-text text-transparent">
               Skerdi
@@ -109,7 +115,7 @@ const Hero = () => {
             </a>
             <a
               href="#contact"
-              className="inline-flex h-12 w-full items-center justify-center rounded-lg border border-white/[.16] bg-black-200 px-7 text-sm font-medium text-white-100 backdrop-blur-lg transition duration-200 hover:-translate-y-0.5 hover:border-purple/35 hover:text-white active:translate-y-px sm:w-auto"
+              className="inline-flex h-12 w-full items-center justify-center rounded-lg border border-white/[.16] bg-black-200 px-7 text-sm font-medium text-white-100 backdrop-blur-lg transition duration-200 hover:-translate-y-0.5 hover:border-purple/35 hover:text-white active:scale-[0.98] active:translate-y-px sm:w-auto"
             >
               Contact Me
             </a>

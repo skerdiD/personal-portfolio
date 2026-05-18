@@ -84,7 +84,7 @@ const Footer = () => {
                 }
                 aria-label={info.name}
                 title={info.name}
-                className={`${classes} cursor-pointer transition-opacity hover:opacity-80`}
+                className={`${classes} cursor-pointer transition duration-200 hover:-translate-y-0.5 hover:border-purple/30 hover:opacity-90 active:scale-[0.98]`}
               >
                 <Icon className="h-5 w-5" />
               </a>

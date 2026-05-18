@@ -77,7 +77,7 @@ const Card = ({
       onClick={() => setHovered((current) => !current)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group/canvas-card relative mx-auto flex w-full max-w-sm items-center justify-center rounded-3xl border border-black/[0.2] p-4 dark:border-white/[0.2] lg:h-[35rem]"
+      className="group/canvas-card relative mx-auto flex w-full max-w-sm items-center justify-center rounded-3xl border border-black/[0.2] p-4 transition duration-300 hover:-translate-y-0.5 hover:border-purple/30 dark:border-white/[0.2] lg:h-[35rem]"
       style={{
         background: "rgb(4,7,29)",
         backgroundColor:

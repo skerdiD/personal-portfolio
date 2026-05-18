@@ -20,10 +20,10 @@ const Grid = () => {
       </div>
 
       <BentoGrid className="w-full">
-        {gridItems.map((item, i) => (
+        {gridItems.map((item) => (
           <BentoGridItem
             id={item.id}
-            key={i}
+            key={item.id}
             title={item.title}
             description={item.description}
             body={item.body}

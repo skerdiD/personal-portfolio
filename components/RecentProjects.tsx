@@ -38,28 +38,28 @@ const RecentProjects = () => {
               key={item.id}
             >
               <PinContainer title="View on GitHub" href={item.github}>
-              <div className="relative mb-6 flex h-44 w-[86vw] items-center justify-center overflow-hidden sm:w-[28rem] lg:h-48">
-                <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162D" }}
-                >
+                <div className="relative mb-6 flex h-44 w-[86vw] items-center justify-center overflow-hidden sm:w-[28rem] lg:h-48">
+                  <div
+                    className="relative h-full w-full overflow-hidden lg:rounded-3xl"
+                    style={{ backgroundColor: "#13162D" }}
+                  >
+                    <Image
+                      src="/bg.png"
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 384px, 80vw"
+                      className="object-cover transition duration-300 group-hover/pin:scale-[1.02]"
+                    />
+                  </div>
                   <Image
-                    src="/bg.png"
-                    alt=""
-                    fill
+                    src={item.img}
+                    alt={`${item.title} preview`}
+                    width={464}
+                    height={300}
                     sizes="(min-width: 1024px) 384px, 80vw"
-                    className="object-cover"
+                    className="absolute bottom-0 z-10 h-auto w-full transition duration-300 group-hover/pin:scale-[1.025]"
                   />
                 </div>
-                <Image
-                  src={item.img}
-                  alt={`${item.title} preview`}
-                  width={464}
-                  height={300}
-                  sizes="(min-width: 1024px) 384px, 80vw"
-                  className="z-10 absolute bottom-0 h-auto w-full"
-                />
-              </div>
 
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
                 {item.title}
@@ -99,7 +99,7 @@ const RecentProjects = () => {
                     href={liveHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border border-purple/30 bg-purple/10 px-3 py-2 text-xs font-semibold text-purple transition hover:border-purple/60"
+                    className="inline-flex items-center gap-2 rounded-lg border border-purple/30 bg-purple/10 px-3 py-2 text-xs font-semibold text-purple transition hover:-translate-y-0.5 hover:border-purple/60 active:scale-[0.98]"
                   >
                     Live Demo
                     <ArrowUpRightIcon className="h-3.5 w-3.5" />
@@ -111,7 +111,7 @@ const RecentProjects = () => {
                     href={item.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border border-white/[.12] bg-black-200 px-3 py-2 text-xs font-semibold text-white-100 transition hover:border-purple/40 hover:text-white"
+                    className="inline-flex items-center gap-2 rounded-lg border border-white/[.12] bg-black-200 px-3 py-2 text-xs font-semibold text-white-100 transition hover:-translate-y-0.5 hover:border-purple/40 hover:text-white active:scale-[0.98]"
                   >
                     <GitHubIcon className="h-4 w-4" />
                     GitHub

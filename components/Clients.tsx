@@ -22,7 +22,7 @@ const Clients = () => {
           {capabilityServices.map((service) => (
             <article
               key={service.title}
-              className="rounded-2xl border border-white/[.1] bg-black-200 p-6 shadow-input backdrop-blur-lg"
+              className="h-full rounded-2xl border border-white/[.1] bg-black-200 p-6 shadow-input backdrop-blur-lg transition duration-300 hover:-translate-y-0.5 hover:border-purple/25 hover:shadow-[0_18px_60px_rgba(203,172,249,0.1)]"
             >
               <h2 className="text-xl font-bold text-white md:text-2xl">
                 {service.title}
@@ -55,7 +55,7 @@ const Clients = () => {
           {techStackGroups.map((group) => (
             <div
               key={group.title}
-              className="rounded-2xl border border-white/[.1] bg-black-200 p-5 backdrop-blur-lg"
+              className="h-full rounded-2xl border border-white/[.1] bg-black-200 p-5 backdrop-blur-lg transition duration-300 hover:-translate-y-0.5 hover:border-purple/25"
             >
               <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-purple">
                 {group.title}

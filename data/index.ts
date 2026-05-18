@@ -32,7 +32,7 @@ export const gridItems: GridItem[] = [
   {
     id: 2,
     description: "Remote Ready",
-    title: "I'm very flexible with time zone communications",
+    title: "Open to Different Time Zones",
     body: "I work well with async updates, clear communication, and flexible overlap for teams in different regions.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2 min-h-[21rem]",
     titleClassName: "justify-start",

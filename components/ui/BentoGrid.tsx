@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
@@ -64,7 +64,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
+        "group/bento row-span-1 relative flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border border-white/[0.1] shadow-input transition duration-300 hover:-translate-y-0.5 hover:border-purple/25 hover:shadow-[0_18px_60px_rgba(203,172,249,0.12)] dark:shadow-none",
         className
       )}
       style={{
@@ -250,30 +250,35 @@ const LightweightGlobe = () => {
           fill="none"
         >
           <path
+            className="remote-orbit-line"
             d="M54 162 C92 110, 144 106, 232 78"
             stroke="url(#orbit-a)"
             strokeWidth="1.5"
             strokeDasharray="5 8"
           />
           <path
+            className="remote-orbit-line"
             d="M42 194 C94 168, 142 184, 238 132"
             stroke="url(#orbit-b)"
             strokeWidth="1.5"
             strokeDasharray="4 9"
           />
           <path
+            className="remote-orbit-line"
             d="M78 82 C116 144, 168 170, 226 214"
             stroke="url(#orbit-c)"
             strokeWidth="1.5"
             strokeDasharray="4 9"
           />
           <path
+            className="remote-orbit-line"
             d="M62 92 C106 134, 162 132, 238 192"
             stroke="url(#orbit-d)"
             strokeWidth="1.2"
             strokeDasharray="3 10"
           />
           <path
+            className="remote-orbit-line"
             d="M92 226 C122 164, 174 126, 218 54"
             stroke="url(#orbit-e)"
             strokeWidth="1.2"
@@ -310,9 +315,10 @@ const LightweightGlobe = () => {
         {orbitNodes.map((position, index) => (
           <span
             key={position}
-            className={`absolute rounded-full bg-blue-100 shadow-[0_0_18px_rgba(228,236,255,0.75)] ${
+            className={`remote-dot absolute rounded-full bg-blue-100 shadow-[0_0_18px_rgba(228,236,255,0.75)] ${
               index % 3 === 0 ? "h-2.5 w-2.5" : "h-2 w-2"
             } ${position}`}
+            style={{ animationDelay: `${index * 420}ms` } as CSSProperties}
           />
         ))}
       </div>
