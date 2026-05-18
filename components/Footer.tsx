@@ -23,18 +23,21 @@ const contactLink =
 
 const Footer = () => {
   return (
-    <footer className="w-full scroll-mt-24 pt-20 pb-10 md:scroll-mt-28" id="contact">
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
+    <footer
+      className="relative w-full scroll-mt-24 overflow-hidden pt-20 pb-10 md:scroll-mt-28"
+      id="contact"
+    >
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-72">
         <Image
           src="/footer-grid.svg"
           alt="grid"
           fill
           sizes="100vw"
-          className="w-full h-full opacity-50 "
+          className="h-full w-full object-cover opacity-50"
         />
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="relative z-10 flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
           Need a <span className="text-purple">SaaS MVP</span>, dashboard, or
           AI-powered feature?
@@ -55,7 +58,7 @@ const Footer = () => {
           />
         </a>
       </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
+      <div className="relative z-10 mt-16 flex flex-col items-center justify-between md:flex-row">
         <p className="md:text-base text-sm md:font-normal font-light">
           Copyright (c) 2026 Skerdi
         </p>
