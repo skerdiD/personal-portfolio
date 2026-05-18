@@ -1,18 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
 
 import { BackgroundGradientAnimation } from "./GradientBg";
-import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
 import { CopyIcon } from "./Icons";
-
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export const BentoGrid = ({
   className,
@@ -131,6 +127,7 @@ export const BentoGridItem = ({
             titleClassName,
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-8",
             id === 2 && "min-h-[21rem] pb-36 md:pb-32",
+            id === 3 && "min-h-[21rem] justify-between gap-6",
             id === 6 && "items-center justify-center text-center"
           )}
         >
@@ -141,7 +138,7 @@ export const BentoGridItem = ({
                 "rounded-2xl bg-black-100/65 p-4 shadow-2xl backdrop-blur-sm",
               id === 2 && "max-w-[19rem]",
               id === 4 && "max-w-xl rounded-2xl bg-black-100/45 p-5 backdrop-blur-sm md:p-6",
-              id === 3 && "max-w-[13rem]",
+              id === 3 && "max-w-full sm:max-w-[14rem] lg:max-w-[15rem]",
               id === 6 && "mx-auto max-w-xs"
             )}
           >
@@ -189,41 +186,22 @@ export const BentoGridItem = ({
           )}
 
           {id === 3 && (
-            <div className="pointer-events-none absolute right-3 top-6 hidden w-fit gap-2 opacity-90 sm:flex lg:right-5 lg:top-8 lg:gap-3">
-              <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
-                {leftLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-[10px] text-white-100 opacity-60 lg:text-xs lg:opacity-100"
-                  >
-                    {item}
-                  </span>
-                ))}
-                <span className="rounded-lg bg-[#10132E] px-3 py-3 text-center"></span>
-              </div>
-              <div className="flex flex-col gap-2 md:gap-2 lg:gap-3">
-                <span className="rounded-lg bg-[#10132E] px-3 py-3 text-center"></span>
-                {rightLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-[10px] text-white-100 opacity-60 lg:text-xs lg:opacity-100"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
+            <div className="pointer-events-none relative z-10 grid w-full grid-cols-2 gap-2 opacity-90 sm:absolute sm:right-5 sm:top-8 sm:w-[16rem] lg:w-[17rem]">
+              {[...leftLists, ...rightLists].map((item) => (
+                <span
+                  key={item}
+                  className="min-h-10 rounded-lg bg-[#10132E] px-3 py-2 text-center text-[10px] leading-tight text-white-100 opacity-70 lg:text-xs lg:opacity-100"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           )}
           {id === 6 && (
             <div className="mt-5 relative">
               {copied && (
-                <div className="absolute -bottom-5 right-0">
-                  <Lottie
-                    animationData={animationData}
-                    loop
-                    autoplay
-                    style={{ height: 200, width: 400 }}
-                  />
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 rounded-full border border-purple/25 bg-purple/10 px-3 py-1 text-xs font-medium text-blue-100 shadow-[0_0_24px_rgba(203,172,249,0.18)]">
+                  Copied to clipboard
                 </div>
               )}
 
@@ -254,9 +232,9 @@ const LightweightGlobe = () => {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute -right-16 top-24 h-72 w-full opacity-90 md:-right-20 md:top-20"
+      className="pointer-events-none absolute -right-6 bottom-4 h-64 w-64 opacity-85 md:-right-8"
     >
-      <div className="relative ml-auto h-72 w-72 md:mr-4">
+      <div className="relative h-64 w-64">
         <div className="absolute inset-4 rounded-full border border-purple/25 bg-[radial-gradient(circle_at_35%_30%,rgba(203,172,249,0.26),rgba(59,130,246,0.12)_38%,rgba(4,7,29,0)_70%)] shadow-[0_0_70px_rgba(203,172,249,0.18)]" />
         <div className="absolute inset-12 rounded-full border border-blue-100/15" />
         <div className="absolute left-1/2 top-8 h-56 w-px -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-blue-100/25 to-transparent" />

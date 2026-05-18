@@ -6,6 +6,15 @@ import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 import { ArrowUpRightIcon, GitHubIcon } from "./ui/Icons";
 
+const isRenderableHref = (link?: string): link is string =>
+  Boolean(link && /^https?:\/\//.test(link));
+
+const proofFields = [
+  { field: "problem", label: "Problem" },
+  { field: "built", label: "Built" },
+  { field: "technicalFocus", label: "Technical focus" },
+] as const;
+
 const RecentProjects = () => {
   return (
     <div id="projects" className="scroll-mt-24 py-20 md:scroll-mt-28">
@@ -17,13 +26,19 @@ const RecentProjects = () => {
         </p>
       </div>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
-        {projects.map((item) => (
-          <div
-            className="lg:min-h-[42rem] h-[39rem] flex items-center justify-center sm:w-96 w-[80vw]"
-            key={item.id}
-          >
-            <PinContainer title="View on GitHub" href={item.github}>
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[18vh] lg:h-[24vh] mb-7">
+        {projects.map((item) => {
+          const liveHref =
+            "live" in item && typeof item.live === "string"
+              ? item.live
+              : undefined;
+
+          return (
+            <div
+              className="flex min-h-[49rem] items-center justify-center sm:w-[28rem] w-[86vw]"
+              key={item.id}
+            >
+              <PinContainer title="View on GitHub" href={item.github}>
+              <div className="relative mb-6 flex h-44 w-[86vw] items-center justify-center overflow-hidden sm:w-[28rem] lg:h-48">
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
@@ -54,28 +69,16 @@ const RecentProjects = () => {
                 {item.focus}
               </p>
 
-              <p
-                className="lg:text-base lg:font-normal font-light text-sm line-clamp-3"
-                style={{
-                  color: "#BEC1DD",
-                  margin: "0.75vh 0",
-                }}
-              >
-                {item.des}
-              </p>
-
-              <p className="text-xs md:text-sm text-white-200 line-clamp-2">
-                {item.useCase}
-              </p>
-
-              <div className="mt-4 flex flex-col gap-2">
-                {item.features.map((feature) => (
-                  <p
-                    key={feature}
-                    className="rounded-lg border border-white/[.1] bg-black-200 px-3 py-2 text-[11px] leading-snug text-white-100"
-                  >
-                    {feature}
-                  </p>
+              <div className="mt-4 space-y-3">
+                {proofFields.map(({ field, label }) => (
+                  <div key={field}>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white-200/70">
+                      {label}
+                    </p>
+                    <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-white-100 md:text-sm">
+                      {item[field]}
+                    </p>
+                  </div>
                 ))}
               </div>
 
@@ -90,27 +93,35 @@ const RecentProjects = () => {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between mt-5 mb-3">
-                <div className="flex items-center gap-2 text-white-200">
-                  <GitHubIcon className="h-5 w-5" />
-                  <span className="text-xs md:text-sm">GitHub</span>
-                </div>
+              <div className="mt-5 mb-3 flex flex-wrap items-center gap-3">
+                {isRenderableHref(liveHref) && (
+                  <a
+                    href={liveHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border border-purple/30 bg-purple/10 px-3 py-2 text-xs font-semibold text-purple transition hover:border-purple/60"
+                  >
+                    Live Demo
+                    <ArrowUpRightIcon className="h-3.5 w-3.5" />
+                  </a>
+                )}
 
-                <a
-                  href={item.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex justify-center items-center"
-                >
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    View GitHub
-                  </p>
-                  <ArrowUpRightIcon className="ms-3 h-4 w-4 text-purple" />
-                </a>
+                {isRenderableHref(item.github) && (
+                  <a
+                    href={item.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border border-white/[.12] bg-black-200 px-3 py-2 text-xs font-semibold text-white-100 transition hover:border-purple/40 hover:text-white"
+                  >
+                    <GitHubIcon className="h-4 w-4" />
+                    GitHub
+                  </a>
+                )}
               </div>
             </PinContainer>
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

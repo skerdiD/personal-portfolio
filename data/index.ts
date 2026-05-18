@@ -34,7 +34,7 @@ export const gridItems = [
     title: "Tools I Use",
     description: "Modern product stack",
     body: "I use modern tools to build fast, clean, and reliable web products.",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-2 min-h-[21rem]",
     imgClassName: "",
     titleClassName: "justify-center",
     img: "",
@@ -69,14 +69,12 @@ export const projects = [
     id: 1,
     title: "BugTriage AI",
     focus: "AI Issue Intake",
-    des: "Turns messy bug reports, screenshots, logs, and user complaints into clear tickets for engineering review.",
-    useCase:
-      "Built around auth, database modeling, monitoring, abuse protection, and structured AI output.",
-    features: [
-      "Structured tickets from messy inputs",
-      "Protected product flow with auth and data",
-      "Monitoring and rate-limit awareness",
-    ],
+    problem:
+      "Bug reports often arrive messy, unclear, and hard for engineering teams to review.",
+    built:
+      "An AI issue intake flow that turns screenshots, logs, and user complaints into structured tickets.",
+    technicalFocus:
+      "Structured AI output, protected flows, abuse protection, monitoring, and database-backed issue handling.",
     img: "/p1.svg",
     tags: [
       "Next.js",
@@ -94,14 +92,12 @@ export const projects = [
     id: 2,
     title: "PulseChat",
     focus: "Realtime Team Workspace",
-    des: "A team chat experience with rooms, live messages, reactions, typing states, and permission-aware interactions.",
-    useCase:
-      "Shows realtime product thinking, responsive UI states, and tested collaboration flows.",
-    features: [
-      "Realtime rooms and live updates",
-      "Reactions, typing states, and feedback UI",
-      "Permission-aware product flow",
-    ],
+    problem:
+      "Teams need a simple realtime workspace for rooms, messages, and fast collaboration.",
+    built:
+      "A realtime chat product with rooms, live messages, reactions, typing states, and permission-aware interactions.",
+    technicalFocus:
+      "Realtime updates, responsive UI states, membership logic, and tested collaboration flows.",
     img: "/p2.svg",
     tags: [
       "Next.js",
@@ -117,48 +113,42 @@ export const projects = [
     id: 3,
     title: "LeadFlow",
     focus: "Client Lead Manager",
-    des: "A simple CRM-style workspace for tracking prospects, lead status, notes, and follow-ups.",
-    useCase:
-      "Built to show clean dashboard structure, CRUD logic, protected routes, and business-focused workflows.",
-    features: [
-      "Lead pipeline and status tracking",
-      "Protected dashboard experience",
-      "Clean data model and business logic",
-    ],
+    problem:
+      "Freelancers and small teams need a simple way to track leads, statuses, notes, and follow-ups.",
+    built:
+      "A protected lead management workspace with dashboard stats, CRUD flows, filtering, and lead status tracking.",
+    technicalFocus:
+      "Auth boundaries, PostgreSQL persistence, clean data modeling, and business-focused dashboard logic.",
     img: "/p1.svg",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "Clerk", "Tailwind", "SaaS"],
+    tags: ["Next.js", "TypeScript", "Clerk", "PostgreSQL", "Drizzle", "Tailwind CSS"],
     github: "https://github.com/skerdiD/lead-flow",
   },
   {
     id: 4,
     title: "Portfolia",
     focus: "Investment Dashboard",
-    des: "A personal finance dashboard for tracking holdings, performance, allocation, and watchlist ideas in one place.",
-    useCase:
-      "Built with a focus on clean analytics, readable charts, and premium dashboard UI.",
-    features: [
-      "Portfolio tracking and analytics",
-      "Charts, filters, and financial summaries",
-      "Polished fintech-style interface",
-    ],
+    problem:
+      "Investors need a clean way to understand holdings, performance, allocation, and watchlist ideas.",
+    built:
+      "A personal investment dashboard with portfolio tracking, analytics, charts, filters, and summaries.",
+    technicalFocus:
+      "Readable financial UI, derived metrics, chart performance, and dashboard data organization.",
     img: "/p3.svg",
-    tags: ["Next.js", "TypeScript", "Recharts", "PostgreSQL", "Clerk", "Tailwind"],
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle", "Recharts", "Clerk", "Tailwind CSS"],
     github: "https://github.com/skerdiD/Portfolia",
   },
   {
     id: 5,
     title: "ScopeFlow AI",
     focus: "Proposal Workspace",
-    des: "An AI-powered workspace that turns discovery notes into project summaries, scope, deliverables, milestones, and risks.",
-    useCase:
-      "Built to show how AI can support real client work, not just generate random text.",
-    features: [
-      "AI proposal generation",
-      "Structured project outputs",
-      "Clear workflow from notes to scope",
-    ],
+    problem:
+      "Discovery notes can be messy and hard to turn into a clear project proposal.",
+    built:
+      "An AI proposal workspace that creates summaries, scope, deliverables, milestones, and risks from raw notes.",
+    technicalFocus:
+      "AI-assisted structured outputs, proposal workflow design, auth, data persistence, and clean product UX.",
     img: "/p4.svg",
-    tags: ["React", "TypeScript", "AI", "Supabase", "Tailwind", "SaaS"],
+    tags: ["React/Next.js", "TypeScript", "Supabase", "PostgreSQL", "AI SDK", "Tailwind CSS"],
     github: "https://github.com/skerdiD/ScopeFlow-AI",
   },
 ];
