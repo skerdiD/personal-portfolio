@@ -1,14 +1,14 @@
 # Skerdi Portfolio
 
-A personalized full-stack developer portfolio for Skerdi, focused on AI-powered SaaS products, dashboards, business tooling, and production-ready web app workflows.
+A personalized full-stack developer portfolio for Skerdi, focused on clean web products, useful features, practical AI workflows, and production-ready app details.
 
 ## Overview
 
-This portfolio presents Skerdi's work through a dark, animated interface with a spotlight hero, bento-style profile section, project cards, product principles, build process highlights, and contact links.
+This portfolio presents Skerdi's work through a dark, polished interface with a spotlight hero, bento-style profile section, proof-focused project cards, services, working principles, and contact links.
 
 The copy is tailored around the kind of products Skerdi builds:
 
-- SaaS applications with authentication, databases, and protected dashboards
+- Full-stack applications with authentication, databases, and protected routes
 - AI-assisted workflows for triage, proposals, automation, and structured output
 - Business dashboards for tracking, filtering, and decision support
 - Realtime and collaboration-focused interfaces
@@ -20,8 +20,6 @@ The copy is tailored around the kind of products Skerdi builds:
 - React
 - TypeScript
 - Tailwind CSS
-- Framer Motion
-- Three.js
 - Sentry
 
 ## Getting Started

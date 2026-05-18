@@ -30,12 +30,6 @@ export const GitHubIcon = (props: IconProps) => (
   </svg>
 );
 
-export const LinkedInIcon = (props: IconProps) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-    <path d="M5.36 7.95H1.84V22h3.52V7.95ZM3.6 2A2.04 2.04 0 1 0 3.58 6.08 2.04 2.04 0 0 0 3.6 2Zm18.54 12.04c0-4.12-2.2-6.04-5.14-6.04a4.43 4.43 0 0 0-4 2.2h-.05V7.95H9.58V22h3.52v-6.95c0-1.83.35-3.61 2.62-3.61 2.24 0 2.27 2.1 2.27 3.73V22h3.52v-7.96h.63Z" />
-  </svg>
-);
-
 export const XIcon = (props: IconProps) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
     <path d="M13.9 10.47 21.35 2h-1.76l-6.47 7.35L7.96 2H2l7.81 11.12L2 22h1.76l6.83-7.77L16.04 22H22l-8.1-11.53Zm-2.42 2.75-.79-1.1L4.4 3.3h2.72l5.08 7.12.79 1.1 6.6 9.25h-2.72l-5.39-7.55Z" />

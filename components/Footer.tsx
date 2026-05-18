@@ -5,14 +5,12 @@ import MagicButton from "./MagicButton";
 import {
   ArrowUpRightIcon,
   GitHubIcon,
-  LinkedInIcon,
   MailIcon,
   XIcon,
 } from "./ui/Icons";
 
 const socialIcons = {
   GitHub: GitHubIcon,
-  LinkedIn: LinkedInIcon,
   "X/Twitter": XIcon,
   Email: MailIcon,
 };
@@ -68,28 +66,13 @@ const Footer = () => {
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((info) => {
+          {socialMedia.filter((info) => isRenderableHref(info.link)).map((info) => {
             const Icon =
               socialIcons[info.name as keyof typeof socialIcons] ??
               MailIcon;
             const classes =
               "w-10 h-10 flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300";
             const link = info.link;
-
-            if (!isRenderableHref(link)) {
-              return (
-                <button
-                  key={info.id}
-                  type="button"
-                  aria-label={`${info.name} link coming soon`}
-                  title={`${info.name} link coming soon`}
-                  className={`${classes} cursor-not-allowed opacity-45`}
-                  disabled
-                >
-                  <Icon className="h-5 w-5" />
-                </button>
-              );
-            }
 
             return (
               <a

@@ -6,7 +6,19 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
-export const gridItems = [
+type GridItem = {
+  id: number;
+  title: string;
+  description?: string;
+  body: string;
+  className: string;
+  imgClassName?: string;
+  titleClassName: string;
+  img?: string;
+  spareImg?: string;
+};
+
+export const gridItems: GridItem[] = [
   {
     id: 1,
     title: "Useful product flow",
@@ -16,29 +28,22 @@ export const gridItems = [
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
     img: "/b1.svg",
-    spareImg: "",
   },
   {
     id: 2,
-    description: "Remote ready",
-    title: "Open to Different Time Zones",
+    description: "Remote Ready",
+    title: "I'm very flexible with time zone communications",
     body: "I work well with async updates, clear communication, and flexible overlap for teams in different regions.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2 min-h-[21rem]",
-    imgClassName: "",
     titleClassName: "justify-start",
-    img: "",
-    spareImg: "",
   },
   {
     id: 3,
     title: "Tools I Use",
-    description: "Modern product stack",
-    body: "I use modern tools to build fast, clean, and reliable web products.",
+    description: "Modern tools",
+    body: "Modern tools for building clean, reliable web products.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2 min-h-[21rem]",
-    imgClassName: "",
     titleClassName: "justify-center",
-    img: "",
-    spareImg: "",
   },
   {
     id: 4,
@@ -54,13 +59,9 @@ export const gridItems = [
   {
     id: 6,
     title: "Have a product idea to build?",
-    description: "",
     body: "I can help turn it into a clean, useful web app with strong UI, real data, and reliable product flow.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
     titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-    img: "",
-    spareImg: "",
   },
 ];
 
@@ -120,7 +121,14 @@ export const projects = [
     technicalFocus:
       "Auth boundaries, PostgreSQL persistence, clean data modeling, and business-focused dashboard logic.",
     img: "/p1.svg",
-    tags: ["Next.js", "TypeScript", "Clerk", "PostgreSQL", "Drizzle", "Tailwind CSS"],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Clerk",
+      "PostgreSQL",
+      "Drizzle",
+      "Tailwind CSS",
+    ],
     github: "https://github.com/skerdiD/lead-flow",
   },
   {
@@ -134,7 +142,15 @@ export const projects = [
     technicalFocus:
       "Readable financial UI, derived metrics, chart performance, and dashboard data organization.",
     img: "/p3.svg",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle", "Recharts", "Clerk", "Tailwind CSS"],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Drizzle",
+      "Recharts",
+      "Clerk",
+      "Tailwind CSS",
+    ],
     github: "https://github.com/skerdiD/Portfolia",
   },
   {
@@ -148,7 +164,14 @@ export const projects = [
     technicalFocus:
       "AI-assisted structured outputs, proposal workflow design, auth, data persistence, and clean product UX.",
     img: "/p4.svg",
-    tags: ["React/Next.js", "TypeScript", "Supabase", "PostgreSQL", "AI SDK", "Tailwind CSS"],
+    tags: [
+      "React/Next.js",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "AI SDK",
+      "Tailwind CSS",
+    ],
     github: "https://github.com/skerdiD/ScopeFlow-AI",
   },
 ];
@@ -183,22 +206,30 @@ export const capabilityServices = [
 export const techStackGroups = [
   {
     title: "Frontend",
-    items: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Framer Motion",
-    ],
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
   },
   {
     title: "Backend & Data",
-    items: ["Node.js", "APIs", "PostgreSQL", "Prisma", "Drizzle", "Supabase", "Neon"],
+    items: [
+      "Node.js",
+      "APIs",
+      "PostgreSQL",
+      "Prisma",
+      "Drizzle",
+      "Supabase",
+      "Neon",
+    ],
   },
   {
     title: "Auth & Product Logic",
-    items: ["Clerk", "Supabase Auth", "Protected routes", "Roles", "Permissions", "User flows"],
+    items: [
+      "Clerk",
+      "Supabase Auth",
+      "Protected routes",
+      "Roles",
+      "Permissions",
+      "User flows",
+    ],
   },
   {
     title: "Quality & Deployment",
@@ -213,39 +244,6 @@ export const techStackGroups = [
   },
 ];
 
-export const workPrinciples = [
-  {
-    id: 1,
-    title: "Start With the Problem",
-    desc: "Before adding features, I focus on what the user needs and what the product should actually solve.",
-    thumbnail: "/exp1.svg",
-  },
-  {
-    id: 2,
-    title: "Build the Core Flow First",
-    desc: "I prioritize the main user journey first, then improve the details around it.",
-    thumbnail: "/exp2.svg",
-  },
-  {
-    id: 3,
-    title: "Keep the UI Clear",
-    desc: "Good design should make the product easier to understand, not just make it look decorated.",
-    thumbnail: "/exp3.svg",
-  },
-  {
-    id: 4,
-    title: "Make It Reliable",
-    desc: "I care about loading states, errors, auth, data safety, performance, and deployment readiness.",
-    thumbnail: "/exp4.svg",
-  },
-  {
-    id: 5,
-    title: "Ship, Learn, Improve",
-    desc: "I believe a product gets stronger through real feedback, not endless guessing.",
-    thumbnail: "/exp1.svg",
-  },
-];
-
 export const socialMedia = [
   {
     id: 1,
@@ -254,16 +252,11 @@ export const socialMedia = [
   },
   {
     id: 2,
-    name: "LinkedIn",
-  },
-  {
-    id: 3,
     name: "X/Twitter",
-    // Placeholder until Skerdi's exact public X profile is finalized.
     link: "https://x.com/skerdiD",
   },
   {
-    id: 4,
+    id: 3,
     name: "Email",
     link: "mailto:hello.skerdi.dev@gmail.com",
   },
