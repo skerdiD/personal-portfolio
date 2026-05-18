@@ -20,9 +20,9 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "Flexible With Remote Collaboration",
-    description: "Clear async work",
-    body: "Clear async updates, organized communication, and smooth collaboration across time zones.",
+    description: "Remote ready",
+    title: "Open to Different Time Zones",
+    body: "I work well with async updates, clear communication, and flexible overlap for teams in different regions.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2 min-h-[21rem]",
     imgClassName: "",
     titleClassName: "justify-start",

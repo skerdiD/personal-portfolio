@@ -108,7 +108,7 @@ export const BentoGridItem = ({
         {id === 4 && (
           <>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(203,172,249,0.18),transparent_34%),linear-gradient(90deg,rgba(4,7,29,0.95)_0%,rgba(4,7,29,0.86)_48%,rgba(4,7,29,0.54)_100%)]" />
-            <div className="pointer-events-none absolute right-8 top-8 hidden w-32 rounded-full border border-purple/25 bg-purple/10 px-4 py-2 text-center text-xs font-semibold text-blue-100 backdrop-blur-md md:block">
+            <div className="pointer-events-none absolute right-8 top-8 z-20 hidden whitespace-nowrap rounded-full border border-purple/25 bg-purple/10 px-5 py-2 text-center text-xs font-semibold text-blue-100 shadow-[0_0_28px_rgba(203,172,249,0.18)] backdrop-blur-md md:block">
               AI workflows
             </div>
           </>
@@ -222,10 +222,12 @@ export const BentoGridItem = ({
 
 const orbitNodes = [
   "left-[18%] top-[38%]",
-  "left-[36%] top-[23%]",
+  "left-[32%] top-[22%]",
   "left-[58%] top-[34%]",
-  "left-[74%] top-[55%]",
-  "left-[46%] top-[68%]",
+  "left-[78%] top-[53%]",
+  "left-[46%] top-[70%]",
+  "left-[28%] top-[62%]",
+  "left-[66%] top-[20%]",
 ];
 
 const LightweightGlobe = () => {
@@ -236,7 +238,8 @@ const LightweightGlobe = () => {
     >
       <div className="relative h-64 w-64">
         <div className="absolute inset-4 rounded-full border border-purple/25 bg-[radial-gradient(circle_at_35%_30%,rgba(203,172,249,0.26),rgba(59,130,246,0.12)_38%,rgba(4,7,29,0)_70%)] shadow-[0_0_70px_rgba(203,172,249,0.18)]" />
-        <div className="absolute inset-12 rounded-full border border-blue-100/15" />
+        <div className="absolute inset-10 rounded-full border border-blue-100/15" />
+        <div className="absolute inset-16 rounded-full border border-white/10" />
         <div className="absolute left-1/2 top-8 h-56 w-px -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-blue-100/25 to-transparent" />
         <div className="absolute left-8 top-1/2 h-px w-56 -translate-y-1/2 rounded-full bg-gradient-to-r from-transparent via-purple/30 to-transparent" />
         <div className="absolute inset-10 rotate-12 rounded-full border border-white/10" />
@@ -264,6 +267,18 @@ const LightweightGlobe = () => {
             strokeWidth="1.5"
             strokeDasharray="4 9"
           />
+          <path
+            d="M62 92 C106 134, 162 132, 238 192"
+            stroke="url(#orbit-d)"
+            strokeWidth="1.2"
+            strokeDasharray="3 10"
+          />
+          <path
+            d="M92 226 C122 164, 174 126, 218 54"
+            stroke="url(#orbit-e)"
+            strokeWidth="1.2"
+            strokeDasharray="3 9"
+          />
           <defs>
             <linearGradient id="orbit-a" x1="54" y1="162" x2="232" y2="78">
               <stop stopColor="#CBACF9" stopOpacity="0" />
@@ -280,12 +295,24 @@ const LightweightGlobe = () => {
               <stop offset="0.5" stopColor="#E4ECFF" stopOpacity="0.38" />
               <stop offset="1" stopColor="#CBACF9" stopOpacity="0" />
             </linearGradient>
+            <linearGradient id="orbit-d" x1="62" y1="92" x2="238" y2="192">
+              <stop stopColor="#CBACF9" stopOpacity="0" />
+              <stop offset="0.48" stopColor="#CBACF9" stopOpacity="0.45" />
+              <stop offset="1" stopColor="#60A5FA" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="orbit-e" x1="92" y1="226" x2="218" y2="54">
+              <stop stopColor="#60A5FA" stopOpacity="0" />
+              <stop offset="0.52" stopColor="#E4ECFF" stopOpacity="0.34" />
+              <stop offset="1" stopColor="#CBACF9" stopOpacity="0" />
+            </linearGradient>
           </defs>
         </svg>
-        {orbitNodes.map((position) => (
+        {orbitNodes.map((position, index) => (
           <span
             key={position}
-            className={`absolute h-2.5 w-2.5 rounded-full bg-blue-100 shadow-[0_0_18px_rgba(228,236,255,0.75)] ${position}`}
+            className={`absolute rounded-full bg-blue-100 shadow-[0_0_18px_rgba(228,236,255,0.75)] ${
+              index % 3 === 0 ? "h-2.5 w-2.5" : "h-2 w-2"
+            } ${position}`}
           />
         ))}
       </div>
