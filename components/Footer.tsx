@@ -43,16 +43,15 @@ const Footer = () => {
 
       <div className="relative z-10 flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Need a <span className="text-purple">SaaS MVP</span>, dashboard, or
-          AI-powered feature?
+          Have a <span className="text-purple">product idea</span> to build?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to turn a clear product idea into a clean, functional web
-          app.
+          I can help turn it into a clean, useful web app with strong UI, real
+          data, and reliable product flow.
         </p>
         <p className="text-white-200/80 mb-6 max-w-2xl text-center text-sm">
-          Available for SaaS MVPs, admin dashboards, AI integrations,
-          full-stack features, and React/Next.js improvements.
+          Available for MVPs, dashboards, AI workflows, full-stack features, and
+          React/Next.js improvements.
         </p>
         <a href={contactLink}>
           <MagicButton
@@ -63,8 +62,9 @@ const Footer = () => {
         </a>
       </div>
       <div className="relative z-10 mt-16 flex flex-col items-center justify-between md:flex-row">
-        <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright (c) 2026 Skerdi
+        <p className="max-w-xl text-center text-sm font-light text-white-100 md:text-left md:text-base md:font-normal">
+          Built by Skerdi, focused on clean products, useful features, and
+          steady improvement.
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">

@@ -5,13 +5,18 @@ const Grid = () => {
   return (
     <section id="about" className="scroll-mt-24 pb-20 pt-12 md:scroll-mt-28 md:pt-16">
       <div className="mx-auto mb-12 max-w-3xl text-center">
-        <h1 className="heading">
-          What I <span className="text-purple">build</span>
-        </h1>
-        <p className="mt-4 text-sm leading-relaxed text-white-200 md:text-lg">
-          SaaS MVPs, admin dashboards, and AI-powered features with clean UI,
-          auth, databases, and real business logic.
-        </p>
+        <h1 className="heading">About Me</h1>
+        <div className="mt-6 space-y-4 text-sm leading-relaxed text-white-200 md:text-lg">
+          <p>
+            I&apos;m a full-stack developer focused on building practical web
+            products that look clean, work smoothly, and solve real problems.
+          </p>
+          <p>
+            I like working on projects where the frontend, backend, database,
+            auth, and user flow all connect into one useful product, not just a
+            nice-looking page.
+          </p>
+        </div>
       </div>
 
       <BentoGrid className="w-full">

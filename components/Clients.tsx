@@ -2,23 +2,23 @@ import { capabilityServices, techStackGroups } from "@/data";
 
 const Clients = () => {
   return (
-    <section id="principles" className="scroll-mt-24 py-20 md:scroll-mt-28">
+    <section id="services" className="scroll-mt-24 py-20 md:scroll-mt-28">
       <div className="mx-auto w-full max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-100">
-            What I build
+            What I Build
           </p>
           <h1 className="heading mt-3">
-            SaaS MVPs, dashboards, and{" "}
-            <span className="text-purple">AI-powered features</span>
+            Useful web apps, dashboards, and{" "}
+            <span className="text-purple">AI workflows</span>
           </h1>
           <p className="mt-5 text-sm leading-relaxed text-white-200 md:text-lg">
-            I build clean full-stack products with strong UI, auth, databases,
-            business logic, and practical AI integrations.
+            I focus on building products that are simple to understand, easy to
+            use, and strong enough to show real business value.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
           {capabilityServices.map((service) => (
             <article
               key={service.title}
@@ -27,7 +27,7 @@ const Clients = () => {
               <h2 className="text-xl font-bold text-white md:text-2xl">
                 {service.title}
               </h2>
-              <p className="mt-4 min-h-24 text-sm leading-relaxed text-white-200">
+              <p className="mt-4 min-h-32 text-sm leading-relaxed text-white-200">
                 {service.description}
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
@@ -42,6 +42,13 @@ const Clients = () => {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mx-auto mt-16 max-w-3xl text-center">
+          <h2 className="heading">Tools I Use</h2>
+          <p className="mt-4 text-sm leading-relaxed text-white-200 md:text-lg">
+            I use modern tools to build fast, clean, and reliable web products.
+          </p>
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">

@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Skerdi | Full-stack Developer",
   description:
-    "Full-stack developer building SaaS MVPs, dashboards, and AI-powered features.",
+    "Full-stack developer building clean web products with clear UI, auth, data, and real product flow.",
 };
 
 export default function RootLayout({

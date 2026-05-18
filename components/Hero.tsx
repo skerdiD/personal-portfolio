@@ -5,15 +5,15 @@ import { ArrowUpRightIcon } from "./ui/Icons";
 import { Spotlight } from "./ui/Spotlight";
 
 const heroHeadline =
-  "Building SaaS MVPs, Dashboards, and AI-Powered Web Apps";
+  "I build clean web products with real product logic.";
 
 const highlightedHeadlineWords = new Set([
-  "SaaS",
-  "MVPs",
-  "Dashboards",
-  "AI-Powered",
-  "Web",
-  "Apps",
+  "clean",
+  "web",
+  "products",
+  "real",
+  "product",
+  "logic",
 ]);
 
 const WordReveal = ({ text }: { text: string }) => {
@@ -94,15 +94,15 @@ const Hero = () => {
           </h1>
 
           <p className="hero-enter-soft hero-enter-delay-2 mt-6 max-w-3xl text-sm leading-relaxed text-white-200 md:text-lg lg:text-xl">
-            I build clean web products with strong UI, authentication,
-            databases, business logic, and practical AI integrations for
-            startups, creators, and small teams.
+            I create useful full-stack apps, from first MVPs and internal tools
+            to AI workflows, with clear UI, auth, data, and features that feel
+            ready to use.
           </p>
 
           <div className="hero-enter-soft hero-enter-delay-3 mt-8 flex w-full max-w-md flex-col items-center justify-center gap-4 sm:flex-row">
             <a href="#projects">
               <MagicButton
-                title="View my work"
+                title="View My Work"
                 icon={<ArrowUpRightIcon className="h-4 w-4" />}
                 position="right"
               />
@@ -111,7 +111,7 @@ const Hero = () => {
               href="#contact"
               className="inline-flex h-12 w-full items-center justify-center rounded-lg border border-white/[.16] bg-black-200 px-7 text-sm font-medium text-white-100 backdrop-blur-lg transition duration-200 hover:-translate-y-0.5 hover:border-purple/35 hover:text-white active:translate-y-px sm:w-auto"
             >
-              Contact me
+              Contact Me
             </a>
           </div>
         </div>

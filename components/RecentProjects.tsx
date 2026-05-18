@@ -9,9 +9,13 @@ import { ArrowUpRightIcon, GitHubIcon } from "./ui/Icons";
 const RecentProjects = () => {
   return (
     <div id="projects" className="scroll-mt-24 py-20 md:scroll-mt-28">
-      <h1 className="heading">
-        Selected <span className="text-purple">SaaS and dashboard work</span>
-      </h1>
+      <div className="mx-auto max-w-3xl text-center">
+        <h1 className="heading">Selected Work</h1>
+        <p className="mt-4 text-sm leading-relaxed text-white-200 md:text-lg">
+          A few projects that show how I think about product flow, UI, data,
+          and real-world features.
+        </p>
+      </div>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((item) => (
           <div
