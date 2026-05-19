@@ -127,7 +127,8 @@ export const BentoGridItem = ({
             titleClassName,
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-8",
             id === 2 && "min-h-[21rem] pb-36 md:pb-32",
-            id === 3 && "min-h-[21rem] justify-between gap-6",
+            id === 3 &&
+              "min-h-[21rem] justify-between gap-6 md:grid md:grid-cols-[minmax(0,0.85fr)_minmax(16rem,1.35fr)] md:items-center md:gap-8",
             id === 6 && "items-center justify-center text-center"
           )}
         >
@@ -138,7 +139,7 @@ export const BentoGridItem = ({
                 "rounded-2xl bg-black-100/65 p-4 shadow-2xl backdrop-blur-sm",
               id === 2 && "max-w-[19rem]",
               id === 4 && "max-w-xl rounded-2xl bg-black-100/45 p-5 backdrop-blur-sm md:p-6",
-              id === 3 && "max-w-full sm:max-w-[14rem] lg:max-w-[15rem]",
+              id === 3 && "max-w-full md:max-w-none",
               id === 6 && "mx-auto max-w-xs"
             )}
           >
@@ -186,11 +187,11 @@ export const BentoGridItem = ({
           )}
 
           {id === 3 && (
-            <div className="pointer-events-none relative z-10 grid w-full grid-cols-2 gap-2 opacity-90 sm:absolute sm:right-5 sm:top-8 sm:w-[16rem] lg:w-[17rem]">
+            <div className="pointer-events-none relative z-10 grid w-full grid-cols-2 gap-2 opacity-90 md:self-center lg:gap-3">
               {[...leftLists, ...rightLists].map((item) => (
                 <span
                   key={item}
-                  className="min-h-10 rounded-lg bg-[#10132E] px-3 py-2 text-center text-[10px] leading-tight text-white-100 opacity-70 lg:text-xs lg:opacity-100"
+                  className="flex min-h-10 items-center justify-center rounded-lg bg-[#10132E] px-3 py-2 text-center text-[10px] leading-tight text-white-100 opacity-70 lg:text-xs lg:opacity-100"
                 >
                   {item}
                 </span>

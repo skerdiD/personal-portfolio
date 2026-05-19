@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Skerdi | Full-stack Developer",
   description:
     "Full-stack developer building clean web products with clear UI, auth, data, and real product flow.",
+  icons: {
+    icon: "/profile.svg?v=2",
+    shortcut: "/profile.svg?v=2",
+    apple: "/profile.svg?v=2",
+  },
 };
 
 export default function RootLayout({
@@ -19,7 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link rel="icon" href="/profile.svg" sizes="any" />
+        <link rel="icon" href="/profile.svg?v=2" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/profile.svg?v=2" />
       </head>
       <body className={inter.className}>
         {children}
