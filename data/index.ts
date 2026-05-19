@@ -76,7 +76,7 @@ export const projects = [
       "An AI issue intake flow that turns screenshots, logs, and user complaints into structured tickets.",
     technicalFocus:
       "Structured AI output, protected flows, abuse protection, monitoring, and database-backed issue handling.",
-    img: "/p1.svg",
+    img: "/projects/BugTriage.png",
     tags: [
       "Next.js",
       "TypeScript",
@@ -99,7 +99,7 @@ export const projects = [
       "A realtime chat product with rooms, live messages, reactions, typing states, and permission-aware interactions.",
     technicalFocus:
       "Realtime updates, responsive UI states, membership logic, and tested collaboration flows.",
-    img: "/p2.svg",
+    img: "/projects/pulsechat.png",
     tags: [
       "Next.js",
       "TypeScript",
@@ -120,7 +120,7 @@ export const projects = [
       "A protected lead management workspace with dashboard stats, CRUD flows, filtering, and lead status tracking.",
     technicalFocus:
       "Auth boundaries, PostgreSQL persistence, clean data modeling, and business-focused dashboard logic.",
-    img: "/p1.svg",
+    img: "/projects/leadflow.png",
     tags: [
       "Next.js",
       "TypeScript",
@@ -141,7 +141,7 @@ export const projects = [
       "A personal investment dashboard with portfolio tracking, analytics, charts, filters, and summaries.",
     technicalFocus:
       "Readable financial UI, derived metrics, chart performance, and dashboard data organization.",
-    img: "/p3.svg",
+    img: "/projects/portfolia.png",
     tags: [
       "Next.js",
       "TypeScript",
@@ -163,7 +163,7 @@ export const projects = [
       "An AI proposal workspace that creates summaries, scope, deliverables, milestones, and risks from raw notes.",
     technicalFocus:
       "AI-assisted structured outputs, proposal workflow design, auth, data persistence, and clean product UX.",
-    img: "/p4.svg",
+    img: "/projects/Scopeflow - Copy.png",
     tags: [
       "React/Next.js",
       "TypeScript",
