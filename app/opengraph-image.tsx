@@ -112,7 +112,7 @@ const OpenGraphImage = () => {
             fontWeight: 700,
           }}
         >
-          {["SaaS MVPs", "Dashboards", "AI Tools"].map((item) => (
+          {["Full-Stack Apps", "Dashboards", "AI Workflows"].map((item) => (
             <div
               key={item}
               style={{

@@ -11,7 +11,7 @@ const Approach = () => {
       <div className="my-20 flex w-full flex-col items-center justify-center gap-4 lg:flex-row">
         <Card
           title="Plan the MVP"
-          icon={<AceternityIcon order="Phase 1" />}
+          icon={<PhaseBadge order="Phase 1" />}
           des="I map the goal, user flow, dashboard needs, data model, and core
           business logic before building."
         >
@@ -19,7 +19,7 @@ const Approach = () => {
         </Card>
         <Card
           title="Build the Product"
-          icon={<AceternityIcon order="Phase 2" />}
+          icon={<PhaseBadge order="Phase 2" />}
           des="I build the UI, APIs, auth, database, and practical AI pieces in
           focused passes so the product stays usable."
         >
@@ -27,7 +27,7 @@ const Approach = () => {
         </Card>
         <Card
           title="Polish the Experience"
-          icon={<AceternityIcon order="Phase 3" />}
+          icon={<PhaseBadge order="Phase 3" />}
           des="I tighten responsive states, errors, performance, deployment
           checks, and React/Next.js details before release."
         >
@@ -117,7 +117,7 @@ const Card = ({
   );
 };
 
-const AceternityIcon = ({ order }: { order: string }) => {
+const PhaseBadge = ({ order }: { order: string }) => {
   return (
     <div>
       <button className="relative inline-flex overflow-hidden rounded-full p-[1px]">

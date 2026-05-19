@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Full-stack developer",
     "Next.js developer",
     "React developer",
-    "SaaS MVPs",
+    "Product MVPs",
     "AI workflows",
     "dashboards",
     "web applications",

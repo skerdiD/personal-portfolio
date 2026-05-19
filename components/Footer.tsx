@@ -6,12 +6,10 @@ import {
   ArrowUpRightIcon,
   GitHubIcon,
   MailIcon,
-  XIcon,
 } from "./ui/Icons";
 
 const socialIcons = {
   GitHub: GitHubIcon,
-  "X/Twitter": XIcon,
   Email: MailIcon,
 };
 

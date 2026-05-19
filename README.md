@@ -18,14 +18,6 @@ It highlights:
 
 The goal is simple: present my work in a clear, polished, and practical way.
 
-## Live Demo
-
-Add deployed portfolio link here:
-
-```txt
-https://your-portfolio-link.com
-```
-
 ## Main Sections
 
 ### Hero
@@ -106,7 +98,7 @@ A simple way for people to reach out for freelance work, collaborations, or oppo
 - CI/CD
 - Vercel
 - Render
-- Netlify
+- Cloud deployment
 
 ## Getting Started
 
