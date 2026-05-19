@@ -15,6 +15,8 @@ const proofFields = [
   { field: "technicalFocus", label: "Technical focus" },
 ] as const;
 
+const projectImageSizes = "(min-width: 640px) 448px, 86vw";
+
 const RecentProjects = () => {
   return (
     <div id="projects" className="scroll-mt-24 py-20 md:scroll-mt-28">
@@ -26,11 +28,12 @@ const RecentProjects = () => {
         </p>
       </div>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
-        {projects.map((item) => {
+        {projects.map((item, index) => {
           const liveHref =
-            "live" in item && typeof item.live === "string"
-              ? item.live
+            "liveUrl" in item && typeof item.liveUrl === "string"
+              ? item.liveUrl
               : undefined;
+          const shouldPreloadImage = index === 0;
 
           return (
             <div
@@ -48,6 +51,8 @@ const RecentProjects = () => {
                       alt=""
                       fill
                       sizes="(min-width: 1024px) 384px, 80vw"
+                      loading="lazy"
+                      quality={55}
                       className="object-cover transition duration-300 group-hover/pin:scale-[1.02]"
                     />
                   </div>
@@ -56,8 +61,12 @@ const RecentProjects = () => {
                     alt={`${item.title} preview`}
                     width={464}
                     height={300}
-                    sizes="(min-width: 1024px) 384px, 80vw"
-                    className="absolute bottom-0 z-10 h-auto w-full transition duration-300 group-hover/pin:scale-[1.025]"
+                    sizes={projectImageSizes}
+                    priority={shouldPreloadImage}
+                    loading={shouldPreloadImage ? undefined : "lazy"}
+                    quality={72}
+                    placeholder="empty"
+                    className="absolute bottom-0 z-10 h-auto w-full bg-[#0f1228] transition duration-300 group-hover/pin:scale-[1.025]"
                   />
                 </div>
 

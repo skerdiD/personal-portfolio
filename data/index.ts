@@ -88,6 +88,7 @@ export const projects = [
       "Arcjet",
     ],
     github: "https://github.com/skerdiD/BugTriage-AI",
+    liveUrl: "https://bug-triage-ai.vercel.app/",
   },
   {
     id: 2,
@@ -109,6 +110,7 @@ export const projects = [
       "Testing",
     ],
     github: "https://github.com/skerdiD/pulse_chat",
+    liveUrl: "https://pulse-chat-seven.vercel.app/",
   },
   {
     id: 3,
@@ -130,6 +132,7 @@ export const projects = [
       "Tailwind CSS",
     ],
     github: "https://github.com/skerdiD/lead-flow",
+    liveUrl: "https://lead-flow-fstg89v0n-skerdids-projects.vercel.app/",
   },
   {
     id: 4,
@@ -152,6 +155,7 @@ export const projects = [
       "Tailwind CSS",
     ],
     github: "https://github.com/skerdiD/Portfolia",
+    liveUrl: "https://portfolia-wheat-gamma.vercel.app/",
   },
   {
     id: 5,
@@ -173,6 +177,7 @@ export const projects = [
       "Tailwind CSS",
     ],
     github: "https://github.com/skerdiD/ScopeFlow-AI",
+    liveUrl: "https://scope-flow-ai.vercel.app/",
   },
 ];
 
@@ -206,29 +211,44 @@ export const capabilityServices = [
 export const techStackGroups = [
   {
     title: "Frontend",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+    items: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "React Hook Form",
+      "Zod",
+      "Recharts",
+      "TanStack Table",
+      "Sonner",
+    ],
   },
   {
     title: "Backend & Data",
     items: [
       "Node.js",
-      "APIs",
+      "Django",
+      "REST APIs",
       "PostgreSQL",
+      "SQL",
       "Prisma",
       "Drizzle",
       "Supabase",
       "Neon",
+      "Postman",
     ],
   },
   {
-    title: "Auth & Product Logic",
+    title: "AI & Integrations",
     items: [
-      "Clerk",
-      "Supabase Auth",
-      "Protected routes",
-      "Roles",
-      "Permissions",
-      "User flows",
+      "Vercel AI SDK",
+      "Gemini",
+      "OpenAI",
+      "Structured output",
+      "Prompt safety",
+      "GitHub Issues API",
+      "AI workflows",
     ],
   },
   {
@@ -239,7 +259,10 @@ export const techStackGroups = [
       "Playwright",
       "Vitest",
       "GitHub Actions",
+      "CI/CD",
       "Vercel",
+      "Render",
+      "Cloud deployment",
     ],
   },
 ];
@@ -249,11 +272,6 @@ export const socialMedia = [
     id: 1,
     name: "GitHub",
     link: "https://github.com/skerdiD",
-  },
-  {
-    id: 2,
-    name: "X/Twitter",
-    link: "https://x.com/skerdiD",
   },
   {
     id: 3,
