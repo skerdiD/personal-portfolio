@@ -12,9 +12,14 @@ const Grid = () => {
             products that look clean, work smoothly, and solve real problems.
           </p>
           <p>
-            I like working on projects where the frontend, backend, database,
-            auth, and user flow all connect into one useful product, not just a
-            nice-looking page.
+            I like projects where the frontend, backend, database, auth, and
+            user flow connect into one useful product, not just a nice-looking
+            page.
+          </p>
+          <p>
+            I&apos;m interested in working with startups, SaaS teams, creators,
+            and small businesses that need dashboards, internal tools, AI
+            workflows, or full-stack product features.
           </p>
         </div>
       </div>

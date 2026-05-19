@@ -276,6 +276,6 @@ export const socialMedia = [
   {
     id: 3,
     name: "Email",
-    link: "mailto:hello.skerdi.dev@gmail.com",
+    link: "mailto:skerdidev.services@gmail.com",
   },
 ];

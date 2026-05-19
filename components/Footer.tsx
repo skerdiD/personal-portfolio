@@ -21,7 +21,7 @@ const isRenderableHref = (link?: string): link is string =>
 const contactLink =
   socialMedia.find(
     (info) => info.name === "Email" && isRenderableHref(info.link)
-  )?.link ?? "mailto:hello.skerdi.dev@gmail.com";
+  )?.link ?? "mailto:skerdidev.services@gmail.com";
 
 const Footer = () => {
   return (
