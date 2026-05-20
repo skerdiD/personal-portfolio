@@ -2,6 +2,8 @@
 
 import React from "react";
 
+import { cn } from "@/lib/utils";
+
 const Approach = () => {
   return (
     <section id="principles" className="w-full scroll-mt-24 py-14 md:scroll-mt-28 md:py-20">
@@ -72,9 +74,22 @@ const Card = ({
   des: string;
 }) => {
   const [hovered, setHovered] = React.useState(false);
+  const openReveal = () => setHovered(true);
+  const toggleReveal = () => setHovered((current) => !current);
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggleReveal();
+    }
+  };
+
   return (
     <div
-      onClick={() => setHovered((current) => !current)}
+      role="button"
+      tabIndex={0}
+      aria-pressed={hovered}
+      onClick={openReveal}
+      onKeyDown={handleKeyDown}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="group/canvas-card relative mx-auto flex w-full max-w-sm items-center justify-center rounded-3xl border border-black/[0.2] p-4 transition duration-300 hover:-translate-y-0.5 hover:border-purple/30 dark:border-white/[0.2] lg:h-[35rem]"
@@ -97,17 +112,26 @@ const Card = ({
 
       <div className="relative z-20 px-10">
         <div
-          className="absolute left-[50%] top-[50%] mx-auto flex min-w-40 translate-x-[-50%] translate-y-[-50%] items-center justify-center text-center transition duration-200 group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0"
+          className={cn(
+            "absolute left-[50%] top-[50%] mx-auto flex min-w-40 translate-x-[-50%] translate-y-[-50%] items-center justify-center text-center transition duration-200 group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0",
+            hovered && "opacity-0"
+          )}
         >
           {icon}
         </div>
         <h2
-          className="relative z-10 mt-4 text-center text-3xl font-bold text-black opacity-0 transition duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100 dark:text-white"
+          className={cn(
+            "relative z-10 mt-4 text-center text-3xl font-bold text-black opacity-0 transition duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100 dark:text-white",
+            hovered && "-translate-y-2 text-white opacity-100"
+          )}
         >
           {title}
         </h2>
         <p
-          className="relative z-10 mt-4 text-center text-sm opacity-0 transition duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100"
+          className={cn(
+            "relative z-10 mt-4 text-center text-sm opacity-0 transition duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100",
+            hovered && "-translate-y-2 text-white opacity-100"
+          )}
           style={{ color: "#E4ECFF" }}
         >
           {des}
@@ -120,7 +144,7 @@ const Card = ({
 const PhaseBadge = ({ order }: { order: string }) => {
   return (
     <div>
-      <button className="relative inline-flex overflow-hidden rounded-full p-[1px]">
+      <div className="relative inline-flex overflow-hidden rounded-full p-[1px]">
         <span
           className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]
          bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
@@ -131,7 +155,7 @@ const PhaseBadge = ({ order }: { order: string }) => {
         >
           {order}
         </span>
-      </button>
+      </div>
     </div>
   );
 };

@@ -63,7 +63,7 @@ const Footer = () => {
           steady improvement.
         </p>
 
-        <div className="flex items-center md:gap-3 gap-6">
+        <div className="mt-7 flex items-center gap-6 md:mt-0 md:gap-3">
           {socialMedia.filter((info) => isRenderableHref(info.link)).map((info) => {
             const Icon =
               socialIcons[info.name as keyof typeof socialIcons] ??

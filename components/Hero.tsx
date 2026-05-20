@@ -53,7 +53,7 @@ const WordReveal = ({ text }: { text: string }) => {
 
 const Hero = () => {
   return (
-    <section className="relative left-1/2 mx-[-50vw] flex min-h-[94svh] w-screen items-center justify-center overflow-hidden px-5 pb-12 pt-28 sm:px-10 sm:pb-16 sm:pt-32 md:min-h-[90vh] md:pt-28">
+    <section className="relative left-1/2 mx-[-50vw] flex min-h-[760px] w-screen items-center justify-center overflow-hidden px-5 pb-12 pt-28 sm:min-h-[780px] sm:px-10 sm:pb-16 sm:pt-32 md:min-h-[760px] md:pt-28 lg:min-h-[90vh]">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"

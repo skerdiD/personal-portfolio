@@ -39,17 +39,18 @@ export const PinContainer = ({
       <div
         style={{
           perspective: "1000px",
-          transform: "rotateX(70deg) translateZ(0deg)",
         }}
-        className="absolute left-1/2 top-1/2 ml-[0.09375rem] mt-4 -translate-x-1/2 -translate-y-1/2"
+        className="pin-stage relative lg:absolute lg:left-1/2 lg:top-1/2 lg:ml-[0.09375rem] lg:mt-4"
       >
         <div
           style={{
-            transform: transform,
-          }}
-          className="absolute left-1/2 top-1/2 flex items-start justify-start overflow-hidden rounded-2xl border border-white/[0.1] p-4 shadow-[0_8px_16px_rgb(0_0_0/0.4)] transition duration-500 group-hover/pin:border-purple/30 group-hover/pin:shadow-[0_18px_70px_rgba(203,172,249,0.14)]"
+            "--pin-transform": transform,
+          } as React.CSSProperties}
+          className="pin-card relative flex w-full items-start justify-start overflow-hidden rounded-2xl border border-white/[0.1] p-4 shadow-[0_8px_16px_rgb(0_0_0/0.4)] transition duration-500 group-hover/pin:border-purple/30 group-hover/pin:shadow-[0_18px_70px_rgba(203,172,249,0.14)] lg:absolute lg:left-1/2 lg:top-1/2 lg:w-auto"
         >
-          <div className={cn(" relative z-50 ", className)}>{children}</div>
+          <div className={cn("relative z-50 w-full lg:w-auto", className)}>
+            {children}
+          </div>
         </div>
       </div>
       <PinPerspective title={title} href={href} />
@@ -65,7 +66,7 @@ export const PinPerspective = ({
   href?: string;
 }) => {
   return (
-    <div className="pointer-events-none z-[60] flex h-80 w-full items-center justify-center opacity-0 transition duration-500 group-hover/pin:opacity-100">
+    <div className="pointer-events-none z-[60] hidden h-80 w-full items-center justify-center opacity-0 transition duration-500 group-hover/pin:opacity-100 lg:flex">
       <div className=" w-full h-full -mt-7 flex-none  inset-0">
         <div className="absolute top-0 inset-x-0  flex justify-center">
           <a

@@ -117,6 +117,16 @@
     will-change: opacity, transform, filter;
   }
 
+  @media (min-width: 1024px) {
+    .pin-stage {
+      transform: rotateX(70deg) translateZ(0deg);
+    }
+
+    .pin-card {
+      transform: var(--pin-transform);
+    }
+  }
+
   .remote-orbit-line {
     animation: remote-orbit-drift 16s ease-in-out infinite alternate;
     transform-origin: center;
