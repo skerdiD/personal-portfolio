@@ -4,6 +4,10 @@ A modern full-stack developer portfolio built to present my work, skills, and pr
 
 The portfolio focuses on clean web products, useful features, practical AI workflows, dashboards, and production-ready application details.
 
+## Live Site
+
+[View the deployed portfolio](https://skerdi-portfolio.vercel.app)
+
 ## Overview
 
 This portfolio is designed to show how I think about building real web products, not just static pages.
@@ -17,6 +21,16 @@ It highlights:
 - Clean UI, responsive design, performance, monitoring, and deployment polish
 
 The goal is simple: present my work in a clear, polished, and practical way.
+
+## Screenshots
+
+| Hero | Selected Work |
+| --- | --- |
+| ![Hero section](./public/screenshots/hero-section.png) | ![Selected work section](./public/screenshots/selected-work-section.png) |
+
+| Services | Tools |
+| --- | --- |
+| ![Services section](./public/screenshots/services-section.png) | ![Tools section](./public/screenshots/tools-section.png) |
 
 ## Main Sections
 
