@@ -2,7 +2,7 @@ import { capabilityServices, techStackGroups } from "@/data";
 
 const Clients = () => {
   return (
-    <section id="services" className="scroll-mt-24 py-20 md:scroll-mt-28">
+    <section id="services" className="scroll-mt-24 py-14 md:scroll-mt-28 md:py-20">
       <div className="mx-auto w-full max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-100">
@@ -18,7 +18,7 @@ const Clients = () => {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 gap-5 md:mt-12 md:grid-cols-2 xl:grid-cols-4">
           {capabilityServices.map((service) => (
             <article
               key={service.title}
@@ -27,7 +27,7 @@ const Clients = () => {
               <h2 className="text-xl font-bold text-white md:text-2xl">
                 {service.title}
               </h2>
-              <p className="mt-4 min-h-32 text-sm leading-relaxed text-white-200">
+              <p className="mt-4 text-sm leading-relaxed text-white-200 md:min-h-32">
                 {service.description}
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
@@ -44,7 +44,7 @@ const Clients = () => {
           ))}
         </div>
 
-        <div className="mx-auto mt-16 max-w-3xl text-center">
+        <div className="mx-auto mt-12 max-w-3xl text-center md:mt-16">
           <h2 className="heading">Tools I Use</h2>
           <p className="mt-4 text-sm leading-relaxed text-white-200 md:text-lg">
             I use modern tools to build fast, clean, and reliable web products.

@@ -49,7 +49,7 @@ export const FloatingNav = ({
     <nav
       aria-label="Primary navigation"
       className={cn(
-        "nav-enter fixed inset-x-4 top-4 z-[5000] mx-auto flex w-fit max-w-[calc(100vw-2rem)] items-center justify-center gap-4 rounded-2xl border border-white/[0.12] bg-[#111928]/80 px-5 py-3 shadow-[0px_8px_32px_rgba(0,0,0,0.24)] backdrop-blur-xl backdrop-saturate-150 md:top-6 md:gap-6 md:px-7 md:py-4",
+        "nav-enter fixed inset-x-4 top-4 z-[5000] mx-auto flex w-fit max-w-[calc(100vw-2rem)] items-center justify-center gap-3 rounded-2xl border border-white/[0.12] bg-[#111928]/80 px-3 py-2.5 shadow-[0px_8px_32px_rgba(0,0,0,0.24)] backdrop-blur-xl backdrop-saturate-150 md:top-6 md:gap-6 md:px-7 md:py-4",
         className
       )}
     >
@@ -58,7 +58,7 @@ export const FloatingNav = ({
           key={navItem.link}
           href={navItem.link}
           onClick={(event) => handleNavClick(event, navItem.link)}
-          className="relative flex items-center text-sm font-medium text-white-100 transition-colors hover:text-purple"
+          className="relative flex items-center text-xs font-medium text-white-100 transition-colors hover:text-purple md:text-sm"
         >
           <span>{navItem.name}</span>
         </Link>

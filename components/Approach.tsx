@@ -4,11 +4,11 @@ import React from "react";
 
 const Approach = () => {
   return (
-    <section id="principles" className="w-full scroll-mt-24 py-20 md:scroll-mt-28">
+    <section id="principles" className="w-full scroll-mt-24 py-14 md:scroll-mt-28 md:py-20">
       <h1 className="heading">
         How I <span className="text-purple">work</span>
       </h1>
-      <div className="my-20 flex w-full flex-col items-center justify-center gap-4 lg:flex-row">
+      <div className="my-12 flex w-full flex-col items-center justify-center gap-4 md:my-20 lg:flex-row">
         <Card
           title="Plan the MVP"
           icon={<PhaseBadge order="Phase 1" />}

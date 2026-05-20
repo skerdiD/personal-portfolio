@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
+import { createPortal } from "react-dom";
 
 import { cn } from "@/lib/utils";
 
@@ -9,6 +10,9 @@ import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import MagicButton from "../MagicButton";
 import { CopyIcon } from "./Icons";
+
+const contactEmail = "skerdidev.services@gmail.com";
+const copyFeedbackDuration = 2000;
 
 export const BentoGrid = ({
   className,
@@ -54,11 +58,34 @@ export const BentoGridItem = ({
   const rightLists = ["Node.js", "APIs", "PostgreSQL", "Prisma", "Supabase"];
 
   const [copied, setCopied] = useState(false);
+  const copyFeedbackTimeout = useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
 
-  const handleCopy = () => {
-    const text = "skerdidev.services@gmail.com";
-    navigator.clipboard.writeText(text);
+  useEffect(() => {
+    return () => {
+      if (copyFeedbackTimeout.current) {
+        clearTimeout(copyFeedbackTimeout.current);
+      }
+    };
+  }, []);
+
+  const handleCopy = async () => {
+    try {
+      await copyTextToClipboard(contactEmail);
+    } catch {
+      return;
+    }
+
     setCopied(true);
+
+    if (copyFeedbackTimeout.current) {
+      clearTimeout(copyFeedbackTimeout.current);
+    }
+
+    copyFeedbackTimeout.current = setTimeout(() => {
+      setCopied(false);
+    }, copyFeedbackDuration);
   };
 
   return (
@@ -200,24 +227,62 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="mt-5 relative">
-              {copied && (
-                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 rounded-full border border-purple/25 bg-purple/10 px-3 py-1 text-xs font-medium text-blue-100 shadow-[0_0_24px_rgba(203,172,249,0.18)]">
-                  Copied to clipboard
-                </div>
-              )}
-
               <MagicButton
-                title={copied ? "Email copied" : "Copy My Email"}
+                title="Copy My Email"
                 icon={<CopyIcon className="h-5 w-5" />}
                 position="left"
                 handleClick={handleCopy}
                 otherClasses="!bg-[#161A31]"
+                ariaLabel="Copy email address to clipboard"
               />
+              <EmailCopyToast visible={copied} />
             </div>
           )}
         </div>
       </div>
     </div>
+  );
+};
+
+const copyTextToClipboard = async (text: string) => {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.setAttribute("readonly", "");
+  textArea.style.position = "fixed";
+  textArea.style.opacity = "0";
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textArea);
+};
+
+const EmailCopyToast = ({ visible }: { visible: boolean }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted || !visible) {
+    return null;
+  }
+
+  return createPortal(
+    <div
+      aria-live="polite"
+      className="pointer-events-none fixed inset-x-4 bottom-5 z-[9999] flex justify-center sm:bottom-8"
+      role="status"
+    >
+      <div className="animate-[fade-in_180ms_ease-out] rounded-full border border-purple/25 bg-[#111928]/95 px-4 py-2 text-sm font-medium text-blue-100 shadow-[0_12px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+        Email copied to clipboard
+      </div>
+    </div>,
+    document.body
   );
 };
 

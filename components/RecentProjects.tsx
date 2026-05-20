@@ -19,7 +19,7 @@ const projectImageSizes = "(min-width: 640px) 448px, 86vw";
 
 const RecentProjects = () => {
   return (
-    <div id="projects" className="scroll-mt-24 py-20 md:scroll-mt-28">
+    <div id="projects" className="scroll-mt-24 py-14 md:scroll-mt-28 md:py-20">
       <div className="mx-auto max-w-3xl text-center">
         <h1 className="heading">Selected Work</h1>
         <p className="mt-4 text-sm leading-relaxed text-white-200 md:text-lg">
@@ -27,7 +27,7 @@ const RecentProjects = () => {
           and real-world features.
         </p>
       </div>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-10 p-0 sm:gap-16 sm:p-4 md:mt-10">
         {projects.map((item, index) => {
           const liveHref =
             "liveUrl" in item && typeof item.liveUrl === "string"
@@ -37,11 +37,15 @@ const RecentProjects = () => {
 
           return (
             <div
-              className="flex min-h-[49rem] items-center justify-center sm:w-[28rem] w-[86vw]"
+              className="flex min-h-[44rem] w-full max-w-[28rem] items-center justify-center sm:min-h-[49rem] sm:w-[28rem]"
               key={item.id}
             >
-              <PinContainer title="View on GitHub" href={item.github}>
-                <div className="relative mb-6 flex h-44 w-[86vw] items-center justify-center overflow-hidden sm:w-[28rem] lg:h-48">
+              <PinContainer
+                title="View on GitHub"
+                href={item.github}
+                containerClassName="w-full"
+              >
+                <div className="relative mb-6 flex h-40 w-full items-center justify-center overflow-hidden sm:h-44 sm:w-[28rem] lg:h-48">
                   <div
                     className="relative h-full w-full overflow-hidden lg:rounded-3xl"
                     style={{ backgroundColor: "#13162D" }}

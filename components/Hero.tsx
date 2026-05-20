@@ -5,15 +5,17 @@ import { ArrowUpRightIcon } from "./ui/Icons";
 import { Spotlight } from "./ui/Spotlight";
 
 const heroHeadline =
-  "I build clean web products with real product logic.";
+  "I build SaaS products, dashboards, and AI workflows for real business problems.";
 
 const highlightedHeadlineWords = new Set([
-  "clean",
-  "web",
+  "SaaS",
   "products",
+  "dashboards",
+  "AI",
+  "workflows",
   "real",
-  "product",
-  "logic",
+  "business",
+  "problems",
 ]);
 
 const WordReveal = ({ text }: { text: string }) => {
@@ -29,7 +31,7 @@ const WordReveal = ({ text }: { text: string }) => {
           <Fragment key={`${word}-${index}`}>
             <span
               className="hero-word-reveal inline-block align-baseline"
-              style={{ "--word-delay": `${320 + index * 48}ms` } as CSSProperties}
+              style={{ "--word-delay": `${360 + index * 64}ms` } as CSSProperties}
             >
               <span
                 className={
@@ -51,7 +53,7 @@ const WordReveal = ({ text }: { text: string }) => {
 
 const Hero = () => {
   return (
-    <section className="relative left-1/2 mx-[-50vw] flex min-h-[94svh] w-screen items-center justify-center overflow-hidden px-5 pb-16 pt-32 sm:px-10 md:min-h-[90vh] md:pt-28">
+    <section className="relative left-1/2 mx-[-50vw] flex min-h-[94svh] w-screen items-center justify-center overflow-hidden px-5 pb-12 pt-28 sm:px-10 sm:pb-16 sm:pt-32 md:min-h-[90vh] md:pt-28">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -95,18 +97,17 @@ const Hero = () => {
             </span>
           </p>
 
-          <h1 className="hero-enter-headline mt-4 max-w-5xl text-4xl font-bold leading-[1.08] tracking-normal text-white [text-wrap:balance] md:text-6xl lg:text-7xl">
+          <h1 className="hero-enter-headline mt-4 max-w-5xl text-3xl font-bold leading-[1.08] tracking-normal text-white [text-wrap:balance] sm:text-4xl md:text-6xl lg:text-7xl">
             <WordReveal text={heroHeadline} />
           </h1>
 
           <p className="hero-enter-soft hero-enter-delay-2 mt-6 max-w-3xl text-sm leading-relaxed text-white-200 md:text-lg lg:text-xl">
-            I create useful full-stack apps, from first MVPs and internal tools
-            to AI workflows, with clear UI, auth, data, and features that feel
-            ready to use.
+            Full-stack developer focused on clean interfaces, authentication,
+            databases, analytics, and production-ready product logic.
           </p>
 
           <div className="hero-enter-soft hero-enter-delay-3 mt-8 flex w-full max-w-md flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="#projects">
+            <a href="#projects" className="w-full sm:w-auto">
               <MagicButton
                 title="View My Work"
                 icon={<ArrowUpRightIcon className="h-4 w-4" />}

@@ -6,15 +6,19 @@ const MagicButton = ({
   position,
   handleClick,
   otherClasses,
+  ariaLabel,
 }: {
   title: string;
   icon: React.ReactNode;
   position: string;
   handleClick?: () => void;
   otherClasses?: string;
+  ariaLabel?: string;
 }) => {
   return (
     <button
+      type="button"
+      aria-label={ariaLabel}
       className="relative inline-flex h-12 w-full overflow-hidden rounded-lg p-[1px] transition duration-200 hover:-translate-y-0.5 active:scale-[0.98] active:translate-y-px md:w-60 focus:outline-none"
       onClick={handleClick}
     >

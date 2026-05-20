@@ -24,7 +24,7 @@ const contactLink =
 const Footer = () => {
   return (
     <footer
-      className="relative w-full scroll-mt-24 overflow-hidden pt-20 pb-10 md:scroll-mt-28"
+      className="relative w-full scroll-mt-24 overflow-hidden pb-10 pt-14 md:scroll-mt-28 md:pt-20"
       id="contact"
     >
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-72">
@@ -57,7 +57,7 @@ const Footer = () => {
           />
         </a>
       </div>
-      <div className="relative z-10 mt-16 flex flex-col items-center justify-between md:flex-row">
+      <div className="relative z-10 mt-10 flex flex-col items-center justify-between md:mt-16 md:flex-row">
         <p className="max-w-xl text-center text-sm font-light text-white-100 md:text-left md:text-base md:font-normal">
           Built by Skerdi, focused on clean products, useful features, and
           steady improvement.
