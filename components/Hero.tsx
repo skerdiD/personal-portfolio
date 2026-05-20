@@ -97,7 +97,7 @@ const Hero = () => {
             </span>
           </p>
 
-          <h1 className="hero-enter-headline mt-4 max-w-5xl text-3xl font-bold leading-[1.08] tracking-normal text-white [text-wrap:balance] sm:text-4xl md:text-6xl lg:text-7xl">
+          <h1 className="hero-enter-headline mt-4 max-w-5xl text-[1.75rem] font-bold leading-[1.08] tracking-normal text-white [text-wrap:balance] sm:text-[2.125rem] md:text-[3.375rem] lg:text-[4rem]">
             <WordReveal text={heroHeadline} />
           </h1>
 
