@@ -6,6 +6,9 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
+export const contactEmail = "skerdidev.services@gmail.com";
+export const contactHref = `mailto:${contactEmail}`;
+
 type GridItem = {
   id: number;
   title: string;
@@ -276,6 +279,6 @@ export const socialMedia = [
   {
     id: 3,
     name: "Email",
-    link: "mailto:skerdidev.services@gmail.com",
+    link: contactHref,
   },
 ];

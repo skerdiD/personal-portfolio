@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { socialMedia } from "@/data";
+import { contactHref, socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 import {
   ArrowUpRightIcon,
@@ -19,7 +19,7 @@ const isRenderableHref = (link?: string): link is string =>
 const contactLink =
   socialMedia.find(
     (info) => info.name === "Email" && isRenderableHref(info.link)
-  )?.link ?? "mailto:skerdidev.services@gmail.com";
+  )?.link ?? contactHref;
 
 const Footer = () => {
   return (

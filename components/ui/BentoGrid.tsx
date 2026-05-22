@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
 import { createPortal } from "react-dom";
 
+import { contactEmail } from "@/data";
 import { cn } from "@/lib/utils";
 
 
@@ -11,7 +12,6 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import MagicButton from "../MagicButton";
 import { CopyIcon } from "./Icons";
 
-const contactEmail = "skerdidev.services@gmail.com";
 const copyFeedbackDuration = 2000;
 
 export const BentoGrid = ({
