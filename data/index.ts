@@ -170,7 +170,7 @@ export const projects = [
       "An AI proposal workspace that creates summaries, scope, deliverables, milestones, and risks from raw notes.",
     technicalFocus:
       "AI-assisted structured outputs, proposal workflow design, auth, data persistence, and clean product UX.",
-    img: "/projects/Scopeflow - Copy.png",
+    img: "/projects/scopeflow.png",
     tags: [
       "React/Next.js",
       "TypeScript",

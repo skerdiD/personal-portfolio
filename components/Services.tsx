@@ -1,6 +1,6 @@
 import { capabilityServices, techStackGroups } from "@/data";
 
-const Clients = () => {
+const Services = () => {
   return (
     <section id="services" className="scroll-mt-24 py-14 md:scroll-mt-28 md:py-20">
       <div className="mx-auto w-full max-w-7xl">
@@ -78,4 +78,4 @@ const Clients = () => {
   );
 };
 
-export default Clients;
+export default Services;
