@@ -72,13 +72,18 @@ A simple way for people to reach out for freelance work, collaborations, or oppo
 * shadcn/ui
 * React Hook Form
 * Zod
+* Recharts
+* TanStack Table
 
 ### Backend & Data
 
 * Node.js
+* Express.js
 * Django
 * REST APIs
+* MongoDB
 * PostgreSQL
+* SQL
 * Prisma
 * Drizzle
 * Supabase
