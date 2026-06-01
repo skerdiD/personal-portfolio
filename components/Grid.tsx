@@ -4,7 +4,7 @@ import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 const aboutHighlights = [
   {
     title: "Who I help",
-    description: "Startups, small businesses, freelancers, and growing teams",
+    description: "Startups, small businesses, freelancers, and small agencies",
     Icon: UsersIcon,
   },
   {

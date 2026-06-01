@@ -60,56 +60,7 @@ This repository is implemented with:
 * React
 * TypeScript
 * Tailwind CSS
-* Sentry
 * Vercel
-
-## Portfolio Focus Areas
-
-The portfolio content references a broader project ecosystem. These are focus areas and tools represented across featured projects and services, not necessarily dependencies installed in this repository.
-
-### Frontend
-
-* Next.js
-* React
-* TypeScript
-* Tailwind CSS
-* shadcn/ui
-* React Hook Form
-* Zod
-* Recharts
-* TanStack Table
-
-### Backend & Data
-
-* Node.js
-* Express.js
-* Django
-* REST APIs
-* MongoDB
-* PostgreSQL
-* SQL
-* Prisma
-* Drizzle
-* Supabase
-* Neon
-
-### AI & Integrations
-
-* Vercel AI SDK
-* Gemini
-* OpenAI
-* Structured output
-* GitHub Issues API
-* AI workflows
-
-### Quality & Deployment
-
-* Sentry
-* Security headers
-* TypeScript type checking
-* ESLint
-* Vercel
-* Deployment readiness
 
 ## Getting Started
 
