@@ -2,7 +2,7 @@
 
 A modern full-stack developer portfolio built to present my projects, skills, and product-building style.
 
-The portfolio focuses on practical web products, clean UI, dashboards, AI workflows, and production-ready application details.
+The portfolio focuses on practical web products, SaaS apps, dashboards, client portals, internal tools, AI workflows, and production-ready application details.
 
 ## Live Site
 
@@ -12,7 +12,7 @@ The portfolio focuses on practical web products, clean UI, dashboards, AI workfl
 
 This portfolio is designed to show how I think about building real web products, not just static pages.
 
-It highlights full-stack applications, AI workflows, dashboards, internal tools, realtime interfaces, responsive design, monitoring, and deployment polish.
+It highlights full-stack applications, AI workflows, dashboards, internal tools, responsive design, monitoring, and deployment polish.
 
 The goal is simple: present my work in a clear, polished, and practical way for freelance clients, collaborators, and job opportunities.
 
@@ -54,6 +54,8 @@ A simple way for people to reach out for freelance work, collaborations, or oppo
 
 ## Tech Stack
 
+This repository is implemented with:
+
 * Next.js
 * React
 * TypeScript
@@ -61,7 +63,9 @@ A simple way for people to reach out for freelance work, collaborations, or oppo
 * Sentry
 * Vercel
 
-## Tools & Focus Areas
+## Portfolio Focus Areas
+
+The portfolio content references a broader project ecosystem. These are focus areas and tools represented across featured projects and services, not necessarily dependencies installed in this repository.
 
 ### Frontend
 
@@ -101,13 +105,11 @@ A simple way for people to reach out for freelance work, collaborations, or oppo
 ### Quality & Deployment
 
 * Sentry
-* Arcjet
-* Playwright
-* Vitest
-* GitHub Actions
-* CI/CD
+* Security headers
+* TypeScript type checking
+* ESLint
 * Vercel
-* Render
+* Deployment readiness
 
 ## Getting Started
 
@@ -136,6 +138,7 @@ npm run dev      # Start the development server
 npm run build    # Create a production build
 npm run start    # Run the production build locally
 npm run lint     # Check linting issues
+npm run typecheck # Check TypeScript types
 npm run deploy   # Deploy to Vercel
 ```
 
