@@ -109,7 +109,7 @@ const Hero = () => {
           <div className="hero-enter-soft hero-enter-delay-3 mt-8 flex w-full max-w-md flex-col items-center justify-center gap-4 sm:flex-row">
             <a href="#projects" className="w-full sm:w-auto">
               <MagicButton
-                title="View My Work"
+                title="View Projects"
                 icon={<ArrowUpRightIcon className="h-4 w-4" />}
                 position="right"
               />
@@ -118,7 +118,7 @@ const Hero = () => {
               href="#contact"
               className="inline-flex h-12 w-full items-center justify-center rounded-lg border border-white/[.16] bg-black-200 px-7 text-sm font-medium text-white-100 backdrop-blur-lg transition duration-200 hover:-translate-y-0.5 hover:border-purple/35 hover:text-white active:scale-[0.98] active:translate-y-px sm:w-auto"
             >
-              Contact Me
+              Work With Me
             </a>
           </div>
         </div>
