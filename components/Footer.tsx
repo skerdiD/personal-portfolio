@@ -45,15 +45,12 @@ const Footer = () => {
           I can help turn it into a clean, useful web app with strong UI, real
           data, and reliable product flow.
         </p>
-        <p className="text-white-200/80 mb-6 max-w-2xl text-center text-sm">
-          Available for MVPs, dashboards, AI workflows, full-stack features, and
-          React/Next.js improvements.
-        </p>
         <a href={contactLink}>
           <MagicButton
             title="Contact Me"
             icon={<ArrowUpRightIcon className="h-4 w-4" />}
             position="right"
+            as="span"
           />
         </a>
       </div>
