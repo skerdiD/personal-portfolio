@@ -198,10 +198,10 @@ export const capabilityServices = [
     tags: ["Tables", "Filters", "Charts", "Analytics", "Reports", "Roles"],
   },
   {
-    title: "AI Workflows & Chatbots",
+    title: "AI Workflows & API Integrations",
     description:
-      "I add practical AI features like chatbots, summaries, proposal drafts, content generation, structured outputs, workflow automation, and repetitive task support.",
-    tags: ["Chatbots", "Summaries", "Drafts", "Content", "Automation", "AI workflows"],
+      "I add practical AI and API features like chatbots, summaries, proposal drafts, content generation, structured outputs, external service integrations, webhooks, and automation for repetitive workflows.",
+    tags: ["Chatbots", "Summaries", "Drafts", "Structured outputs", "API integrations", "Automation"],
   },
   {
     title: "Full-Stack Product Polish",
@@ -243,14 +243,17 @@ export const techStackGroups = [
     ],
   },
   {
-    title: "AI & Integrations",
+    title: "AI & API INTEGRATIONS",
     items: [
+      "OpenAI API",
+      "Gemini API",
       "Vercel AI SDK",
-      "Gemini",
-      "OpenAI",
-      "Structured output",
-      "GitHub Issues API",
+      "AI chatbots",
+      "Structured outputs",
       "AI workflows",
+      "API integrations",
+      "Webhooks",
+      "Automation",
     ],
   },
   {
