@@ -22,10 +22,6 @@ The goal is simple: present my work in a clear, polished, and practical way for 
 | ------------------------------------------------------ | ------------------------------------------------------------------------ |
 | ![Hero section](./public/screenshots/hero-section.png) | ![Selected work section](./public/screenshots/selected-work-section.png) |
 
-| Services                                                       | Tools                                                    |
-| -------------------------------------------------------------- | -------------------------------------------------------- |
-| ![Services section](./public/screenshots/services-section.png) | ![Tools section](./public/screenshots/tools-section.png) |
-
 ## Main Sections
 
 ### Hero
@@ -56,11 +52,11 @@ A simple way for people to reach out for freelance work, collaborations, or oppo
 
 This repository is implemented with:
 
-* Next.js
-* React
-* TypeScript
-* Tailwind CSS
-* Vercel
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Vercel
 
 ## Getting Started
 
