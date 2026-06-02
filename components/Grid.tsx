@@ -9,12 +9,14 @@ const aboutHighlights = [
   },
   {
     title: "What I build",
-    description: "Full-stack web apps, dashboards, client portals, internal tools, and AI workflows",
+    description:
+      "Full-stack web apps, dashboards, admin tools, analytics/reporting systems, client portals, internal tools, API integrations, and AI workflows.",
     Icon: LayersIcon,
   },
   {
     title: "Outcomes",
-    description: "Systems that save time, manage data, automate tasks, and help businesses operate better",
+    description:
+      "Systems that save time, manage data, automate tasks, track business activity, show clear analytics, and help businesses operate better.",
     Icon: CheckChartIcon,
   },
 ];

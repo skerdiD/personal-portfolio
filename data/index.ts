@@ -188,26 +188,26 @@ export const capabilityServices = [
   {
     title: "Product MVPs",
     description:
-      "I turn an idea into a first working version with sign-in, core flows, data, dashboards, and the main features users need first.",
-    tags: ["Sign-in", "Core flows", "Data", "Dashboards"],
+      "I turn an idea into a first working product with sign-in, core user flows, database features, forms, dashboards, basic admin areas, settings, and the main features users need first.",
+    tags: ["Sign-in", "Core flows", "Data", "Dashboards", "Forms", "Settings"],
   },
   {
-    title: "Dashboards & Admin Tools",
+    title: "Dashboards, Admin Tools & Analytics",
     description:
-      "Clean interfaces for managing users, leads, projects, analytics, tasks, and internal business workflows.",
-    tags: ["Tables", "Filters", "Charts", "Roles"],
+      "I build clean dashboards and admin tools for managing users, leads, projects, tasks, roles, business data, analytics, reports, and internal workflows.",
+    tags: ["Tables", "Filters", "Charts", "Analytics", "Reports", "Roles"],
   },
   {
-    title: "AI Workflows",
+    title: "AI Workflows & Chatbots",
     description:
-      "I add practical AI features that help with summaries, proposal drafts, bug triage, structured outputs, and repetitive tasks.",
-    tags: ["Summaries", "Drafts", "Triage", "Structured output"],
+      "I add practical AI features like chatbots, summaries, proposal drafts, content generation, structured outputs, workflow automation, and repetitive task support.",
+    tags: ["Chatbots", "Summaries", "Drafts", "Content", "Automation", "AI workflows"],
   },
   {
     title: "Full-Stack Product Polish",
     description:
       "I improve loading states, error handling, responsive design, security basics, performance, tests, and deployment readiness.",
-    tags: ["Loading states", "Errors", "Performance", "Deployment"],
+    tags: ["Loading states", "Errors", "Performance", "Security", "Testing", "Deployment"],
   },
 ];
 
